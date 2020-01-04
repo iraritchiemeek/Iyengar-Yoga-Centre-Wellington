@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Layout from "../components/layout"
 import TeachersList from "../components/teachersList"
 import SEO from "../components/seo"
 
@@ -9,10 +10,10 @@ class IndexPage extends React.Component {
     const teachers = data.allContentfulTeacher.edges
 
     return (
-      <div>
+      <Layout>
         <SEO title="Home" />
         <TeachersList teachers={teachers}></TeachersList>
-      </div>
+      </Layout>
     )
   }
 }
