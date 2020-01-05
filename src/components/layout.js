@@ -4,13 +4,16 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import { createGlobalStyle } from "styled-components"
-import { colors } from "../styled-components/variables"
+import { color } from "../styled-components/variables"
 
 const GlobalStyle = createGlobalStyle`
-  body, p {
+  p {
     font-family: 'Open Sans';
-    color: ${colors.offBlack};
+    color: ${color.offBlack};
     font-size: 13px;
+    letter-spacing: 0.01em;
+    line-height: 1.7em;
+    margin: 1em 0 0;
   }
 
   h2 {

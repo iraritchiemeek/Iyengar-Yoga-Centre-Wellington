@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors }  from './variables.js';
+import { color, device }  from './variables.js';
 
 export const TeachersListContainer = styled.div`
 	display: flex;
@@ -8,8 +8,11 @@ export const TeachersListContainer = styled.div`
 `
 
 export const TeacherItemContainer = styled.div`
-	width: 48%;
+	width: 100%;
+	@media ${device.tablet} {
+		width: 48%;
+	}
 	h2 {
-		color: ${colors.lightBlue};
+		color: ${color.lightBlue};
 	}
 `
