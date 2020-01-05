@@ -1,13 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { createGlobalStyle } from "styled-components"
 import Header from "./header"
 import "./layout.css"
+import { createGlobalStyle } from "styled-components"
+import { colors } from "../styled-components/variables"
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  body, p {
     font-family: 'Open Sans';
+    color: ${colors.offBlack};
+    font-size: 13px;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 1.2em 0 0.8em 0;
   }
 `
 

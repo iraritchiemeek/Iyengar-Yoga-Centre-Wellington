@@ -12,8 +12,8 @@ const TeachersList = props => {
 		teacher = teacher.node
 		return (
 			<TeacherItemContainer>
-				<Img fluid={teacher.image.fluid} />
-				<strong><p>{teacher.name}</p></strong>
+				{/* <Img fluid={teacher.image.fluid} /> */}
+				<h2>{teacher.name}</h2>
 				<p>{teacher.description.description}</p>
 			</TeacherItemContainer>
 		)

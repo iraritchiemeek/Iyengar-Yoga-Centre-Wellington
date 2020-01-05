@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+import { colors }  from './variables.js';
 
 export const TeachersListContainer = styled.div`
 	display: flex;
@@ -8,4 +9,7 @@ export const TeachersListContainer = styled.div`
 
 export const TeacherItemContainer = styled.div`
 	width: 48%;
+	h2 {
+		color: ${colors.lightBlue};
+	}
 `
