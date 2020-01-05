@@ -1,5 +1,6 @@
 import React from "react"
 import {TeachersListContainer, TeacherItemContainer} from '../styled-components/teachersList'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 
 
@@ -14,7 +15,7 @@ const TeachersList = props => {
 			<TeacherItemContainer>
 				{/* <Img fluid={teacher.image.fluid} /> */}
 				<h2>{teacher.name}</h2>
-				<p>{teacher.description.description}</p>
+				<p>{documentToReactComponents(teacher.description.json)}</p>
 			</TeacherItemContainer>
 		)
 	}

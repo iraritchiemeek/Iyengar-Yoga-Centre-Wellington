@@ -27,7 +27,7 @@ export const pageQuery = graphql`
         node {
           name
           description {
-            description
+            json
           }
           image {
             fluid {
