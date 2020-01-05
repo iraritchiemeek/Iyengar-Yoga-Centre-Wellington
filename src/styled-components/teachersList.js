@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const TeachersListContainer = styled.div`
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: space-between;
 `
 
 export const TeacherItemContainer = styled.div`
-	flex: 1;
-	width: 33.333%
+	width: 48%;
 `

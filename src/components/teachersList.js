@@ -13,7 +13,8 @@ const TeachersList = props => {
 		return (
 			<TeacherItemContainer>
 				<Img fluid={teacher.image.fluid} />
-				<p>{teacher.name}</p>
+				<strong><p>{teacher.name}</p></strong>
+				<p>{teacher.description.description}</p>
 			</TeacherItemContainer>
 		)
 	}
