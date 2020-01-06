@@ -5,7 +5,7 @@ export const ContentContainer = styled.section`
 	padding: 1em;
 	max-width: 100%;
 	@media ${device.tablet} {
-		padding: 5em;
+		padding: 0 9em;
 	}
 `
 
