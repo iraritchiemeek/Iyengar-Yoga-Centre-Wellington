@@ -1,5 +1,5 @@
 import React from "react"
-import {TeachersListContainer, TeacherItemContainer} from '../styled-components/teachersList'
+import { FlexContainer, FlexItem } from '../styled-components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 
@@ -9,23 +9,32 @@ const TeachersList = props => {
 	if (!teachers) return null
 
 	const renderTeacher = teacher => {
-		console.log(teacher)
 		teacher = teacher.node
-		return (
-			<TeacherItemContainer>
-				<Img fluid={teacher.image.fluid} />
-				<h2>{teacher.name}</h2>
-				<p>{documentToReactComponents(teacher.description.json)}</p>
-			</TeacherItemContainer>
-		)
+		if (teacher.mainTeacher) {
+			return (
+				<FlexItem width="100%">
+					<Img fluid={teacher.image.fluid} />
+					<h2>{teacher.name}</h2>
+					<p>{documentToReactComponents(teacher.description.json)}</p>
+				</FlexItem>
+			)
+		} else {
+			return (
+				<FlexItem width="33.333%">
+					<Img fluid={teacher.image.fluid} />
+					<h2>{teacher.name}</h2>
+					<p>{documentToReactComponents(teacher.description.json)}</p>
+				</FlexItem>
+			)
+		}
 	}
 
 	const renderTeachers = teachers => teachers.map(renderTeacher)
 
 	return (
-		<TeachersListContainer>
+		<FlexContainer>
 			{renderTeachers(teachers)}
-		</TeachersListContainer>
+		</FlexContainer>
 	)
 }
 

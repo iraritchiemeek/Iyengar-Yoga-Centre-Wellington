@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import TeachersList from "../components/teachersList"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import { ContentContainer } from "../styled-components/layout"
 
 
 class TeachersPage extends React.Component {
@@ -15,8 +16,10 @@ class TeachersPage extends React.Component {
     return (
       <Layout>
         <SEO title="Teachers" />
-        <Img fluid={pageImage}/>
-        {/* <TeachersList teachers={teachers}></TeachersList> */}
+        <ContentContainer>
+          <TeachersList teachers={teachers}></TeachersList>
+        </ContentContainer>
+        <Img fluid={pageImage} objectFit="cover"/>
       </Layout>
     )
   }
@@ -51,6 +54,7 @@ export const pageQuery = graphql`
               ...GatsbyContentfulFluid
             }
           }
+          mainTeacher
         }
       }
     }
