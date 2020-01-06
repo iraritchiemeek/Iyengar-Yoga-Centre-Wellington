@@ -1,9 +1,12 @@
 import styled from 'styled-components'
-import { color, device }  from './variables.js';
+import { color, device, spacing }  from './variables.js';
 
 export const ContentContainer = styled.section`
-	padding: 5em;
+	padding: 1em;
 	max-width: 100%;
+	@media ${device.tablet} {
+		padding: 5em;
+	}
 `
 
 export const FlexContainer = styled.div`
@@ -16,10 +19,17 @@ export const FlexItem = styled.div`
 	width: 100%;
 	@media ${device.tablet} {
 		width: ${props => props.width || "100%"};
-		padding: 1.1em 0.8em;
+		padding: 1.1em ${spacing.horizontalItemSpace}em;
 		box-sizing: border-box;
 	}
 	h2 {
 		color: ${color.lightBlue};
+	}
+`
+
+export const TripleColumnText = styled.div`
+	@media ${device.tablet} {
+		column-count: 3;
+		column-gap: ${spacing.horizontalItemSpace * 2}em;
 	}
 `

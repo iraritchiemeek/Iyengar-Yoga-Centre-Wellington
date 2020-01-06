@@ -1,5 +1,5 @@
 import React from "react"
-import { FlexContainer, FlexItem } from '../styled-components/layout'
+import { FlexContainer, FlexItem, TripleColumnText } from '../styled-components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 
@@ -15,7 +15,7 @@ const TeachersList = props => {
 				<FlexItem width="100%">
 					<Img fluid={teacher.image.fluid} />
 					<h2>{teacher.name}</h2>
-					<p>{documentToReactComponents(teacher.description.json)}</p>
+					<TripleColumnText>{documentToReactComponents(teacher.description.json)}</TripleColumnText>
 				</FlexItem>
 			)
 		} else {
@@ -23,7 +23,7 @@ const TeachersList = props => {
 				<FlexItem width="33.333%">
 					<Img fluid={teacher.image.fluid} />
 					<h2>{teacher.name}</h2>
-					<p>{documentToReactComponents(teacher.description.json)}</p>
+					{documentToReactComponents(teacher.description.json)}
 				</FlexItem>
 			)
 		}

@@ -1,18 +1,22 @@
 
 export const color = {
-	lightBlue: '#6FCDE4',
-	darkLightBlue: '#7dcde3',
-	offBlack: '#1C1C1C',
+	lightBlue: `#6FCDE4`,
+	darkLightBlue: `#7dcde3`,
+	offBlack: `#1C1C1C`,
+}
+
+export const spacing = {
+	horizontalItemSpace: 0.8
 }
 
 const screenSize = {
-	mobileS: '320px',
-	mobileM: '375px',
-	mobileL: '425px',
-	tablet: '768px',
-	laptop: '1024px',
-	laptopL: '1440px',
-	desktop: '2560px'
+	mobileS: `320px`,
+	mobileM: `375px`,
+	mobileL: `425px`,
+	tablet: `768px`,
+	laptop: `1024px`,
+	laptopL: `1440px`,
+	desktop: `2560px`
 }
 
 export const device = {

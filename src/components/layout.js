@@ -10,14 +10,14 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     margin: 0;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
   }  
   p {
     color: ${color.offBlack};
     font-size: 13px;
     letter-spacing: 0.01em;
     line-height: 1.7em;
-    margin: 1em 0 0;
+    margin: 0 0 1.2em 0;
   }
 
   h2 {
