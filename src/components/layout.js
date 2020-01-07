@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
     <div>
       <Header siteTitle={data.site.siteMetadata.title} />
       <GlobalStyle />
-        <main>{children}</main>
+      <main>{children}</main>
         {/* <footer>
           © Copyright Tessa Meek {new Date().getFullYear()}. All rights reserved.
         </footer>*/}

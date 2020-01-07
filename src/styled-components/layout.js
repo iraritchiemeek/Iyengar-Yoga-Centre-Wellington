@@ -1,11 +1,32 @@
 import styled from 'styled-components'
 import { color, device, spacing }  from './variables.js';
 
+export const NavList = styled.ul`
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	background-color: ${color.lightBlue};
+	@media ${device.tablet} {
+		padding: 0 ${spacing.contentPadding}em;
+	}
+`
+
+export const NavItem = styled.li`
+	padding: .8em;
+	text-align: center;
+	a, a:visited {
+		font-size: 16px;
+		color: white;
+		text-decoration: none;	
+	}
+`
+
 export const ContentContainer = styled.section`
 	padding: 1em;
 	max-width: 100%;
 	@media ${device.tablet} {
-		padding: 0 9em;
+		padding: 0 ${spacing.contentPadding}em;
 	}
 `
 

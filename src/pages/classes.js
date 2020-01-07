@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import TeachersList from "../components/teachersList"
+import Timetable from "../components/timetable"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { ContentContainer } from "../styled-components/layout"
@@ -16,8 +16,10 @@ class ClassesPage extends React.Component {
     return (
       <Layout>
         <SEO title="Teachers" />
-
-        <Img fluid={pageImage} objectFit="cover"/>
+        <ContentContainer>
+          <Timetable classes={classes} /> 
+        </ContentContainer>
+        {/* <Img fluid={pageImage} objectFit="cover"/> */}
       </Layout>
     )
   }
