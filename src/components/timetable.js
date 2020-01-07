@@ -8,17 +8,30 @@ const Timetable = props => {
  	const { classes } = props
 	if (!classes) return null
 
-	const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-	let sortedClasses = {"Monday": [], "Tuesday": [], "Wednesday": [], "Thursday": [], "Friday": [], "Saturday": [], "Sunday": []}
-	
-	const dayOfWeek = date => weekdays[new Date(date).getDay() -1]
+	let timetable = {"Monday": [], "Tuesday": [], "Wednesday": [], "Thursday": [], "Friday": [], "Saturday": [], "Sunday": []}
+
+	const weekdays = Object.keys(timetable)
+
+	const getClassWeekday = date => weekdays[new Date(date).getDay() -1]
+
+	const addClassToTimetable = yogaClass => timetable[getClassWeekday(yogaClass.startTime)].push(yogaClass)
+
+	const sortClasses = classes => {
+		classes.map((yogaClass => {
+			addClassToTimetable(yogaClass.node)
+		}))	
+		return timetable
+	}
 
 	const renderTimetable = classes => {
-		classes.map((yogaClass => {
-			yogaClass = yogaClass.node
-			sortedClasses[dayOfWeek(yogaClass.startTime)].push(yogaClass)
+		timetable = sortClasses(classes)
+		return weekdays.map((weekday => {
+			return (
+				<FlexItem width="14.285%">
+					<h2>{weekday}</h2>
+				</FlexItem>
+			)
 		}))
-		console.log(sortedClasses)
 	}
 
 	return (
