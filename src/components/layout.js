@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0 30px;
     box-sizing: border-box;
     background-color: ${color.lightBlue};
-    border-bottom: 1px solid #eaeaea;
     nav {
       padding: 8px 0;
     }

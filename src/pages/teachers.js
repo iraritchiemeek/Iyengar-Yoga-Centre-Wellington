@@ -30,7 +30,9 @@ export default TeachersPage
 export const pageQuery = graphql`
   query {
     allContentfulPage(
-      filter: {pageId: {eq: "home"}}
+      filter: {
+        pageId: {eq: "home"}
+      }
     ){
       edges {
         node {
@@ -42,7 +44,12 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulTeacher {
+    allContentfulTeacher(
+      sort: {
+        fields: [mainTeacher]
+        order: DESC
+      }
+      ){
       edges {
         node {
           name

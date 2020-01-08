@@ -13,7 +13,12 @@ export const NavItem = styled.li`
 	text-align: center;
 	a, a:visited, a:active {
 		font-size: 16px;
+		colro: white;
 		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+		color: black;
 	}
 `
 
@@ -31,7 +36,6 @@ export const ContentContainer = styled.section`
 export const FlexContainer = styled.div`
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
 `
 
 export const FlexItem = styled.div`
