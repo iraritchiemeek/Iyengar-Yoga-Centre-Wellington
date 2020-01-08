@@ -6,7 +6,6 @@ export const NavList = styled.ul`
 	margin: 0;
 	padding: 0;
 	display: flex;
-	background-color: ${color.lightBlue};
 `
 
 export const NavItem = styled.li`
@@ -14,9 +13,12 @@ export const NavItem = styled.li`
 	text-align: center;
 	a, a:visited, a:active {
 		font-size: 16px;
-		color: white;
 		text-decoration: none;
 	}
+`
+
+export const Logo = styled.div`
+	width: 15px;
 `
 
 export const ContentContainer = styled.section`

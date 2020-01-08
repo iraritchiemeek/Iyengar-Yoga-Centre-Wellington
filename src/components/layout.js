@@ -11,7 +11,16 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-  }  
+  } 
+  header {
+    padding: 0 30px;
+    box-sizing: border-box;
+    background-color: ${color.lightBlue};
+    border-bottom: 1px solid #eaeaea;
+    nav {
+      padding: 8px 0;
+    }
+  }
   a, a:active, a:visited {
     color: black;
     text-decoration: none;
@@ -36,7 +45,18 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
+      allContentfulAsset(
+        filter: {contentful_id: {eq: "3dyUjNdyFt9Crq2QB91lx3"}}
+      ){
+        edges {
+          node {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
       site {
         siteMetadata {
           title
@@ -47,7 +67,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} logo={data.allContentfulAsset.edges[0].node.fluid} />
       <GlobalStyle />
       <main>{children}</main>
         {/* <footer>

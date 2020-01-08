@@ -1,6 +1,6 @@
 import React from "react"
 import { FlexContainer, FlexItem, VerticalList, VerticalListItem, TripleColumnText } from '../styled-components/layout'
-import { P } from '../styled-components/text'
+import { NoSpaceP } from '../styled-components/text'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 import { Link } from "gatsby"
@@ -47,9 +47,9 @@ const Timetable = props => {
 						{timetable[weekday].map((yogaClass => {
 							return (
 								<VerticalListItem>
-									<strong><P margin="0">{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</P></strong>
-									<P margin="0"><Link to="/teachers/">{yogaClass.teacher.name}</Link></P>
-									<P margin="0"><Link to="/classes/">{yogaClass.classLevel.longName}</Link></P>
+									<strong><NoSpaceP margin="0">{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</NoSpaceP></strong>
+									<NoSpaceP margin="0"><Link to="/teachers/">{yogaClass.teacher.name}</Link></NoSpaceP>
+									<NoSpaceP margin="0"><Link to="/classes/">{yogaClass.classLevel.longName}</Link></NoSpaceP>
 								</VerticalListItem>
 							)
 						}))}
