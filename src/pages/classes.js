@@ -48,6 +48,7 @@ export const pageQuery = graphql`
       edges {
         node {
           startTime
+          endTime
           teacher {
             name
           }

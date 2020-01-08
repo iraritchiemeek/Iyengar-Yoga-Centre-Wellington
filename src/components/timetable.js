@@ -14,12 +14,13 @@ const Timetable = props => {
 
 	const getClassWeekday = date => weekdays[new Date(date).getDay() -1]
 
-	const getClassTime = date => {
+	const renderTime = (hour, minute) => hour < 12 ? `${hour}${minute != 0 ? `:${minute}` : ``}am` : `${hour != 12 ? hour - 12 : hour}${minute != 0 ? `:${minute}` : ``}pm`
+
+	const classTime = date => {
 		date = new Date(date)
 		var hour = date.getHours() 
-		var minute = date.getMinutes() == 0 ? `00` : date.getMinutes()
-		console.log(date.getMinutes())
-		return hour <= 12 ? `${hour}:${minute}am` : `${hour - 12}:${minute}pm`
+		var minute = date.getMinutes() == 0 ? `` : date.getMinutes()
+		return renderTime(hour, minute)
 	}
 
 	const addClassToTimetable = yogaClass => timetable[getClassWeekday(yogaClass.startTime)].push(yogaClass)
@@ -39,7 +40,7 @@ const Timetable = props => {
 					<h2>{weekday}</h2>
 					{
 						timetable[weekday].map((yogaClass => {
-							return <p>{getClassTime(yogaClass.startTime)}</p>
+							return <p>{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</p>
 						}))
 					}
 				</FlexItem>
