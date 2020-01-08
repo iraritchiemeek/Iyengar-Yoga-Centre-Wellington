@@ -38,11 +38,14 @@ const Timetable = props => {
 			return (
 				<FlexItem width="14.285%">
 					<h2>{weekday}</h2>
-					{
-						timetable[weekday].map((yogaClass => {
-							return <p>{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</p>
-						}))
-					}
+					{timetable[weekday].map((yogaClass => {
+						return (
+							<div>
+								<strong><p>{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</p></strong>
+								<p>{yogaClass.classLevel.longName}</p>
+							</div>
+						)
+					}))}
 				</FlexItem>
 			)
 		}))
