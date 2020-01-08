@@ -7,27 +7,23 @@ export const NavList = styled.ul`
 	padding: 0;
 	display: flex;
 	background-color: ${color.lightBlue};
-	@media ${device.tablet} {
-		padding: 0 ${spacing.contentPadding}em;
-	}
 `
 
 export const NavItem = styled.li`
 	padding: .8em;
 	text-align: center;
-	a, a:visited {
+	a, a:visited, a:active {
 		font-size: 16px;
 		color: white;
-		text-decoration: none;	
+		text-decoration: none;
 	}
 `
 
 export const ContentContainer = styled.section`
 	padding: 1em;
-	max-width: 100%;
-	@media ${device.tablet} {
-		padding: 0 ${spacing.contentPadding}em;
-	}
+	max-width: 1100px;
+    margin: auto;
+    box-sizing: border-box;
 `
 
 export const FlexContainer = styled.div`

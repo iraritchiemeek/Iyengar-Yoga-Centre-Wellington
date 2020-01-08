@@ -12,6 +12,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Open Sans', sans-serif;
   }  
+  a, a:active, a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover {
+    color: ${color.lightBlue};
+  }
   p {
     color: ${color.offBlack};
     font-size: 13px;

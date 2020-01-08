@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 import { ContentContainer } from "../styled-components/layout"
 
 
-class ClassesPage extends React.Component {
+class TimetablePage extends React.Component {
   render() {
     const { data } = this.props
     const classes = data.allContentfulClass.edges
@@ -25,12 +25,12 @@ class ClassesPage extends React.Component {
   }
 }
 
-export default ClassesPage
+export default TimetablePage
 
 export const pageQuery = graphql`
   query {
     allContentfulPage(
-      filter: {pageId: {eq: "classes"}}
+      filter: {pageId: {eq: "timetable"}}
     ){
       edges {
         node {
@@ -47,6 +47,7 @@ export const pageQuery = graphql`
     ){
       edges {
         node {
+          title
           startTime
           endTime
           teacher {

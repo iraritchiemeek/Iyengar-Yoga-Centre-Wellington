@@ -3,17 +3,18 @@ import { FlexContainer, FlexItem, VerticalList, VerticalListItem, TripleColumnTe
 import { P } from '../styled-components/text'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
+import { Link } from "gatsby"
 
 
 const Timetable = props => {
  	const { classes } = props
 	if (!classes) return null
 
-	let timetable = {"Monday": [], "Tuesday": [], "Wednesday": [], "Thursday": [], "Friday": [], "Saturday": [], "Sunday": []}
+	let timetable = { "Sunday": [], "Monday": [], "Tuesday": [], "Wednesday": [], "Thursday": [], "Friday": [], "Saturday": []}
 
 	const weekdays = Object.keys(timetable)
 
-	const getClassWeekday = date => weekdays[new Date(date).getDay() -1]
+	const getClassWeekday = date => weekdays[new Date(date).getDay()]
 
 	const renderTime = (hour, minute) => hour < 12 ? `${hour}${minute != 0 ? `:${minute}` : ``}am` : `${hour != 12 ? hour - 12 : hour}${minute != 0 ? `:${minute}` : ``}pm`
 
@@ -24,7 +25,10 @@ const Timetable = props => {
 		return renderTime(hour, minute)
 	}
 
-	const addClassToTimetable = yogaClass => timetable[getClassWeekday(yogaClass.startTime)].push(yogaClass)
+	const addClassToTimetable = yogaClass => {
+		console.log(`${yogaClass.title} : ${new Date(yogaClass.startTime).getDay()}`)
+		timetable[getClassWeekday(yogaClass.startTime)].push(yogaClass)
+	}
 
 	const sortClasses = classes => {
 		classes.map((yogaClass => {
@@ -44,8 +48,8 @@ const Timetable = props => {
 							return (
 								<VerticalListItem>
 									<strong><P margin="0">{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</P></strong>
-									<P margin="0">{yogaClass.teacher.name}</P>
-									<P margin="0">{yogaClass.classLevel.longName}</P>
+									<P margin="0"><Link to="/teachers/">{yogaClass.teacher.name}</Link></P>
+									<P margin="0"><Link to="/classes/">{yogaClass.classLevel.longName}</Link></P>
 								</VerticalListItem>
 							)
 						}))}
