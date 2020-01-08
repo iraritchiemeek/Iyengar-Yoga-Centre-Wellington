@@ -40,7 +40,7 @@ export const FlexItem = styled.div`
 	width: 100%;
 	@media ${device.tablet} {
 		width: ${props => props.width || "100%"};
-		padding: 1.1em ${spacing.horizontalItemSpace}em;
+		padding: 1.1em ${spacing.betweenItemSpace}em;
 		box-sizing: border-box;
 	}
 	h2 {
@@ -48,9 +48,22 @@ export const FlexItem = styled.div`
 	}
 `
 
+export const VerticalList = styled.ul`
+	list-style: none;
+	margin: 0;
+	padding: 0;
+`
+
+export const VerticalListItem = styled.li`
+	padding: 0 0 ${spacing.betweenItemSpace}em 0;
+`
+
 export const TripleColumnText = styled.div`
 	@media ${device.tablet} {
 		column-count: 3;
-		column-gap: ${spacing.horizontalItemSpace * 2}em;
+		column-gap: ${spacing.betweenItemSpace * 2}em;
 	}
 `
+
+
+

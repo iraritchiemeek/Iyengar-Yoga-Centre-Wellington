@@ -1,5 +1,6 @@
 import React from "react"
-import { FlexContainer, FlexItem, TripleColumnText } from '../styled-components/layout'
+import { FlexContainer, FlexItem, VerticalList, VerticalListItem, TripleColumnText } from '../styled-components/layout'
+import { P } from '../styled-components/text'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 
@@ -38,14 +39,17 @@ const Timetable = props => {
 			return (
 				<FlexItem width="14.285%">
 					<h2>{weekday}</h2>
-					{timetable[weekday].map((yogaClass => {
-						return (
-							<div>
-								<strong><p>{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</p></strong>
-								<p>{yogaClass.classLevel.longName}</p>
-							</div>
-						)
-					}))}
+					<VerticalList>
+						{timetable[weekday].map((yogaClass => {
+							return (
+								<VerticalListItem>
+									<strong><P margin="0">{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</P></strong>
+									<P margin="0">{yogaClass.teacher.name}</P>
+									<P margin="0">{yogaClass.classLevel.longName}</P>
+								</VerticalListItem>
+							)
+						}))}
+					</VerticalList>
 				</FlexItem>
 			)
 		}))

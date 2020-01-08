@@ -7,7 +7,7 @@ export const color = {
 
 export const spacing = {
 	contentPadding: 9,
-	horizontalItemSpace: 0.8
+	betweenItemSpace: 0.8
 }
 
 const screenSize = {

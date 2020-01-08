@@ -15,11 +15,11 @@ class ClassesPage extends React.Component {
 
     return (
       <Layout>
-        <SEO title="Teachers" />
+        <SEO title="Classes" />
         <ContentContainer>
           <Timetable classes={classes} /> 
         </ContentContainer>
-        {/* <Img fluid={pageImage} objectFit="cover"/> */}
+        <Img fluid={pageImage} objectFit="cover"/>
       </Layout>
     )
   }
