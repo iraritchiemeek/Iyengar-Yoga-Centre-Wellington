@@ -3,7 +3,6 @@ import { FlexContainer, FlexItem, TripleColumnText } from '../styled-components/
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 
-
 const TeachersList = props => {
  	const { teachers } = props
 	if (!teachers) return null
