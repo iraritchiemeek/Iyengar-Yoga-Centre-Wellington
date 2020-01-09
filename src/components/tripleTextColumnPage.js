@@ -49,7 +49,9 @@ const TripleTextColumnPage = props => {
 					<h2>{content.tripleTextColumnTitle}</h2>
 					<TripleColumnText>{documentToReactComponents(content.tripleTextColumnContent.json)}</TripleColumnText>
 				</FlexItem>
+				<VerticalSpace space="30px"/>
 			</React.Fragment>
+
 		)
 	}
 

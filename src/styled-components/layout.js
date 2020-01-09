@@ -21,6 +21,9 @@ export const NavItem = styled.li`
 	a:hover {
 		color: black;
 	}
+	a.active {
+		color: black;
+	}
 `
 
 export const Logo = styled.div`
@@ -35,7 +38,7 @@ export const Logo = styled.div`
 
 export const ContentContainer = styled.section`
 	@media ${device.tablet} {
-		padding: 2em 0.2em;
+		padding: 2em 0;
 	}
 	padding: 1em;
 	max-width: ${spacing.maxContentWidth};

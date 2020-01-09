@@ -9,13 +9,13 @@ const Header = ({ siteTitle, logo }) => (
   	<nav>
   		<NavList>
         <Logo><Link to="//"><Img fluid={logo}>About</Img></Link></Logo>
-  			<NavItem><Link to="/about/">About</Link></NavItem>
-  			<NavItem><Link to="/teachers/">Teachers</Link></NavItem>
-        <NavItem><Link to="/timetable/">Timetable</Link></NavItem>
-  			<NavItem><Link to="/classes/">Classes</Link></NavItem>
-        <NavItem><Link to="/retreats/">Retreats</Link></NavItem>
-        <NavItem><Link to="/retreats/">Pricing</Link></NavItem>
-  			<NavItem><Link to="/contact/">Contact</Link></NavItem>
+  			<NavItem><Link activeClassName="active" to="/about/">About</Link></NavItem>
+  			<NavItem><Link activeClassName="active" to="/teachers/">Teachers</Link></NavItem>
+        <NavItem><Link activeClassName="active" to="/timetable/">Timetable</Link></NavItem>
+  			<NavItem><Link activeClassName="active" to="/classTypes/">Classes</Link></NavItem>
+        <NavItem><Link activeClassName="active" to="/retreats/">Retreats</Link></NavItem>
+        <NavItem><Link activeClassName="active" to="/pricing/">Pricing</Link></NavItem>
+  			<NavItem><Link activeClassName="active" to="/contact/">Contact</Link></NavItem>
   		</NavList>
   	</nav>
   </header>

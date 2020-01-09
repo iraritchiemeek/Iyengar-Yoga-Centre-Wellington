@@ -12,11 +12,21 @@ const TeachersList = props => {
 		teacher = teacher.node
 		if (teacher.mainTeacher) {
 			return (
-				<FlexItem width="100%">
-					<Img fluid={teacher.image.fluid} />
-					<h2>{teacher.name}</h2>
-					<TripleColumnText>{documentToReactComponents(teacher.description.json)}</TripleColumnText>
-				</FlexItem>
+				<React.Fragment>
+					<FlexItem width="33.333%">
+						<Img fluid={teacher.image.fluid} />
+					</FlexItem>
+					<FlexItem width="33.333%">
+						<Img fluid={teacher.image.fluid} />
+					</FlexItem>
+					<FlexItem width="33.333%">
+						<Img fluid={teacher.image.fluid} />
+					</FlexItem>
+					<FlexItem width="100%">
+						<h2>{teacher.name}</h2>
+						<TripleColumnText>{documentToReactComponents(teacher.description.json)}</TripleColumnText>
+					</FlexItem>
+				</React.Fragment>
 			)
 		} else {
 			return (
