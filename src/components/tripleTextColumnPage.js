@@ -30,7 +30,7 @@ const TripleTextColumnPage = props => {
 			<React.Fragment>
 				<TripleImage content={content}/>
 				<FlexItem width="100%">
-					<h2>{content.tripleTextColumnTitle}</h2>
+					<h2>{content.tripleTextColumnTitle}</h2>}
 					<TripleColumnText>{documentToReactComponents(content.tripleTextColumnContent.json)}</TripleColumnText>
 				</FlexItem>
 				<VerticalSpace space="30px"/>

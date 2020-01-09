@@ -32,6 +32,7 @@ export const Logo = styled.div`
 	height: 15px;
 	background-color: ${color.lightBlue};
 	border-radius: 50%;
+	margin-right: ${spacing.betweenItemSpace}em;
 
 `
 
