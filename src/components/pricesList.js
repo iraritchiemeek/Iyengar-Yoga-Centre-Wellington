@@ -1,8 +1,10 @@
 import React from "react"
-import { FlexContainer, FlexItem, TripleColumnText } from '../styled-components/layout'
+import { FlexContainer, FlexItem, TripleColumnText, Button, VerticalSpace } from '../styled-components/layout'
 import { NoSpaceP } from '../styled-components/text'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
+
+const punchPassUrl = `https://wellingtonyoga.punchpass.com/passes/`
 
 const PricesList = props => {
  	const { prices } = props
@@ -22,10 +24,7 @@ const PricesList = props => {
 	}
 
 	const renderValidity = price => {
-		if (!price.validityPeriod) return null
-		console.log(price)
-		const validity = price.validityPeriod
-		console.log(validity)
+		const validity = price.validityPeriod ? price.validityPeriod : null
 		if (validity) {
 			return (
 				<NoSpaceP>Valid for {validity} week{validity > 1 ? `s` : ``}</NoSpaceP>
@@ -44,6 +43,8 @@ const PricesList = props => {
 				{renderTitle(price)}
 				{renderValidity(price)}
 				<NoSpaceP>${price.price}</NoSpaceP>
+				<VerticalSpace space="30px"/>
+				<Button><NoSpaceP><a href={punchPassUrl + price.punchPassId} target="_blank">Purchase</a></NoSpaceP></Button>
 			</FlexItem>
 		)
 	}

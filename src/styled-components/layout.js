@@ -16,7 +16,6 @@ export const NavItem = styled.li`
 		font-size: 16px;
 		color: ${color.lightGrey};
 		text-decoration: none;
-		transition: color 0.1s ease-out;
 	}
 	a:hover {
 		color: black;
@@ -87,7 +86,20 @@ export const VerticalSpace = styled.div`
 	}
 `
 
-
+export const Button = styled.button`
+	background-color: ${color.lightBlue};
+	display: inline-block;
+	padding: 5px 12px 7px;
+	transition: background-color 0.1s ease-out;
+	border: none;
+	a, a:hover {
+		color: white;
+		padding: 7px 12px;
+	}
+	&:hover {
+		background-color: ${color.darkLightBlue};
+	}
+`
 
 
 

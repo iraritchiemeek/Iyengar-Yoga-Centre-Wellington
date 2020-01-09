@@ -23,9 +23,13 @@ const GlobalStyle = createGlobalStyle`
       margin: 0 auto;
     }
   }
-  a, a:active, a:visited {
+  a {
     color: black;
     text-decoration: none;
+    transition: color 0.1s ease-out;
+  }
+  a:active, a:visited {
+    color: default;
   }
   a:hover {
     color: ${color.lightBlue};
