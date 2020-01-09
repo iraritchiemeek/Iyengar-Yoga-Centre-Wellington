@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import Timetable from "../components/timetable"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer } from "../styled-components/layout"
+import { FlexContainer, FlexItem, ContentContainer } from "../styled-components/layout"
+
 
 
 class TimetablePage extends React.Component {
@@ -18,8 +19,12 @@ class TimetablePage extends React.Component {
         <SEO title="Classes" />
         <ContentContainer>
           <Timetable classes={classes} /> 
+          <FlexContainer>
+            <FlexItem width="100%">
+              <Img fluid={pageImage} objectFit="cover"/>
+            </FlexItem>
+          </FlexContainer>
         </ContentContainer>
-        <Img fluid={pageImage} objectFit="cover"/>
       </Layout>
     )
   }

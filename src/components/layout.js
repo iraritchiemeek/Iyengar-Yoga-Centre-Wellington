@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import { createGlobalStyle } from "styled-components"
 import { color, spacing } from "../styled-components/variables"
+import { VerticalSpace } from '../styled-components/layout'
 
 const GlobalStyle = createGlobalStyle`
   body, html {
@@ -71,6 +72,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} logo={data.allContentfulAsset.edges[0].node.fluid} />
       <GlobalStyle />
       <main>{children}</main>
+      <VerticalSpace />
         {/* <footer>
           © Copyright Tessa Meek {new Date().getFullYear()}. All rights reserved.
         </footer>*/}

@@ -9,7 +9,7 @@ export const NoSpaceP = styled.p`
 	margin: 0;
 `
 
-export const Quote = styled(NoSpaceP)`
+export const QuoteText = styled(NoSpaceP)`
 	line-height: 1.6em;
     font-size: 20px;
     color: ${color.darkGrey};

@@ -27,10 +27,17 @@ export const Logo = styled.div`
 	cursor: pointer;
 	padding: .8em;
 	width: 15px;
+	height: 15px;
+	background-color: ${color.lightBlue};
+	border-radius: 50%;
+
 `
 
 export const ContentContainer = styled.section`
-	padding: 2em 0;
+	@media ${device.tablet} {
+		padding: 2em 0.2em;
+	}
+	padding: 1em;
 	max-width: ${spacing.maxContentWidth};
     margin: auto;
     box-sizing: border-box;
@@ -69,6 +76,21 @@ export const TripleColumnText = styled.div`
 		column-gap: ${spacing.betweenItemSpace * 2}em;
 	}
 `
+export const VerticalSpace = styled.div`
+	width: 100%;
+	padding: 30px 0;
+	@media ${device.tablet} {
+		padding: ${props => props.space || "60px"} 0;
+	}
+`
+
+
+
+
+
+
+
+
 
 
 
