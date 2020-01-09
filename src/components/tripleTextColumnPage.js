@@ -1,9 +1,7 @@
 import React from "react"
 import { FlexContainer, FlexItem, TripleColumnText, VerticalSpace } from '../styled-components/layout'
-import { QuoteText, NoSpaceP } from '../styled-components/text'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
-import Quote from "./quote"
 
 const TripleImage = props => {
 	const {content} = props
@@ -30,7 +28,6 @@ const TripleTextColumnPage = props => {
 		content = content.node
 		return (
 			<React.Fragment>
-				<Quote content={content} />
 				<TripleImage content={content}/>
 				<FlexItem width="100%">
 					<h2>{content.tripleTextColumnTitle}</h2>

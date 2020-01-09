@@ -4,22 +4,24 @@ import Layout from "../components/layout"
 import TeachersList from "../components/teachersList"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer } from "../styled-components/layout"
+import { ContentContainer, VerticalSpace } from "../styled-components/layout"
+import Quote from "../components/quote"
 
 
 class TeachersPage extends React.Component {
   render() {
     const { data } = this.props
     const teachers = data.allContentfulTeacher.edges
-    const pageImage = data.allContentfulPage.edges[0].node.image.fluid
+    const page = data.allContentfulPage.edges[0].node
 
     return (
       <Layout>
         <SEO title="Teachers" />
         <ContentContainer>
+          <Quote page={page} />
+          <VerticalSpace space="30px"/>
           <TeachersList teachers={teachers}></TeachersList>
         </ContentContainer>
-        <Img fluid={pageImage} objectFit="cover"/>
       </Layout>
     )
   }
@@ -31,15 +33,13 @@ export const pageQuery = graphql`
   query {
     allContentfulPage(
       filter: {
-        pageId: {eq: "home"}
+        pageId: {eq: "teachers"}
       }
     ){
       edges {
         node {
-          image {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+          headerQuote {
+            headerQuote
           }
         }
       }

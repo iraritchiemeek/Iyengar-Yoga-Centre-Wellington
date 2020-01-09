@@ -1,20 +1,23 @@
 import React from "react"
-import { FlexContainer, FlexItem, TripleColumnText, VerticalSpace } from '../styled-components/layout'
-import { QuoteText, NoSpaceP } from '../styled-components/text'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Img from "gatsby-image"
+import { QuoteText, QuoteAuthor } from '../styled-components/text'
 
 const Quote = props => {
-	const {content} = props
-	if (content.headerQuote) {
+	const { page } = props
+	if (!page) return null
+
+	console.log(page)
+
+	if (!page.headerQuoteAuthor) {
 		return (
-			<FlexItem width="100%">
-				<QuoteText>{content.headerQuote.headerQuote}</QuoteText>
-				<NoSpaceP>- {content.headerQuoteAuthor}</NoSpaceP>
-			</FlexItem> 
+			<QuoteText>{page.headerQuote.headerQuote}</QuoteText>
 		)
 	} else {
-		return null
+		return (
+			<React.Fragment>
+				<QuoteText>{page.headerQuote.headerQuote}</QuoteText>
+				<QuoteAuthor>- {page.headerQuoteAuthor}</QuoteAuthor>
+			</React.Fragment>
+		)
 	}
 }
 

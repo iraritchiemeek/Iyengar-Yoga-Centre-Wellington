@@ -5,7 +5,7 @@ import TripleTextColumnPage from "../components/tripleTextColumnPage"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { ContentContainer } from "../styled-components/layout"
-
+import Quote from "../components/quote"
 
 class AboutPage extends React.Component {
   render() {
@@ -17,6 +17,7 @@ class AboutPage extends React.Component {
       <Layout>
         <SEO title="Teachers" />
         <ContentContainer>
+          <Quote page={aboutContent.node} />
           <TripleTextColumnPage content={aboutContent}></TripleTextColumnPage>
           <TripleTextColumnPage content={iyengarContent}></TripleTextColumnPage>
         </ContentContainer>
