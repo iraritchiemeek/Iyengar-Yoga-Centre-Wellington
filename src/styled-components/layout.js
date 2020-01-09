@@ -11,24 +11,27 @@ export const NavList = styled.ul`
 export const NavItem = styled.li`
 	padding: .8em;
 	text-align: center;
+	flex: 1;
 	a, a:visited, a:active {
 		font-size: 16px;
-		colro: white;
+		color: ${color.lightGrey};
 		text-decoration: none;
+		transition: color 0.1s ease-out;
 	}
 	a:hover {
-		text-decoration: underline;
 		color: black;
 	}
 `
 
 export const Logo = styled.div`
+	cursor: pointer;
+	padding: .8em;
 	width: 15px;
 `
 
 export const ContentContainer = styled.section`
-	padding: 1em;
-	max-width: 1100px;
+	padding: 2em 0;
+	max-width: ${spacing.maxContentWidth};
     margin: auto;
     box-sizing: border-box;
 `

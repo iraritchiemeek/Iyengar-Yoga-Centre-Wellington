@@ -4,10 +4,11 @@ export const color = {
 	darkLightBlue: `#7dcde3`,
 	offBlack: `#1C1C1C`,
 	darkGrey: `#666`,
+	lightGrey: `#aaa`
 }
 
 export const spacing = {
-	contentPadding: 9,
+	maxContentWidth: "1100px",
 	betweenItemSpace: 0.8
 }
 

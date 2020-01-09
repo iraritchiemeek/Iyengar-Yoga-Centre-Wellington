@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import { createGlobalStyle } from "styled-components"
-import { color } from "../styled-components/variables"
+import { color, spacing } from "../styled-components/variables"
 
 const GlobalStyle = createGlobalStyle`
   body, html {
@@ -15,9 +15,11 @@ const GlobalStyle = createGlobalStyle`
   header {
     padding: 0 30px;
     box-sizing: border-box;
-    background-color: ${color.lightBlue};
+    box-shadow: inset 0 -1px 0 0px rgba(0, 0, 0, 0.1);
     nav {
       padding: 8px 0;
+      max-width: ${spacing.maxContentWidth};
+      margin: 0 auto;
     }
   }
   a, a:active, a:visited {

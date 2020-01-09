@@ -8,12 +8,14 @@ const Header = ({ siteTitle, logo }) => (
   <header>
   	<nav>
   		<NavList>
-        <NavItem><Logo><Img fluid={logo}>About</Img></Logo></NavItem>
+        <Logo><Link to="//"><Img fluid={logo}>About</Img></Link></Logo>
   			<NavItem><Link to="/about/">About</Link></NavItem>
   			<NavItem><Link to="/teachers/">Teachers</Link></NavItem>
         <NavItem><Link to="/timetable/">Timetable</Link></NavItem>
   			<NavItem><Link to="/classes/">Classes</Link></NavItem>
-  			<NavItem><Link to="/retrears/">Retreats</Link></NavItem>
+        <NavItem><Link to="/retreats/">Retreats</Link></NavItem>
+        <NavItem><Link to="/retreats/">Pricing</Link></NavItem>
+  			<NavItem><Link to="/contact/">Contact</Link></NavItem>
   		</NavList>
   	</nav>
   </header>
