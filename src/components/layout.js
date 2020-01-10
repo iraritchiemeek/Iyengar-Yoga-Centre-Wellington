@@ -41,6 +41,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.7em;
     margin: 0 0 1.2em 0;
   }
+  h1 {
+    font-size: 22px;
+    color: black;
+  }
   h2 {
     font-weight: 400;
     font-size: 20px;
@@ -58,7 +62,7 @@ const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulAsset(
-        filter: {contentful_id: {eq: "3dyUjNdyFt9Crq2QB91lx3"}}
+        filter: {contentful_id: {eq: "3TEuRazbQ8KcmQh3AfugSq"}}
       ){
         edges {
           node {

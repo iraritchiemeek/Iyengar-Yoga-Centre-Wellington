@@ -18,14 +18,14 @@ class PricingPage extends React.Component {
 
     return (
       <Layout>
-        <SEO title="Teachers" />
+        <SEO title="Pricing" />
         <ContentContainer>
           <Quote page={page}/>
           <PricesList prices={prices}></PricesList>
           <FlexContainer>
             {singleTextColumns.map(content => {
               return (
-                <SingleTextColumn title={content.title} content={content.conent.json}/>
+                <SingleTextColumn title={content.title} content={content.content.json}/>
               )
             })}
           </FlexContainer>

@@ -28,10 +28,8 @@ export const NavItem = styled.li`
 export const Logo = styled.div`
 	cursor: pointer;
 	padding: .8em;
-	width: 15px;
-	height: 15px;
-	background-color: ${color.lightBlue};
-	border-radius: 50%;
+	width: 20px;
+	height: 20px;
 	margin-right: ${spacing.betweenItemSpace}em;
 
 `

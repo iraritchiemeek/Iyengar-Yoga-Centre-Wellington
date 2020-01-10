@@ -17,9 +17,8 @@ class ClassTypesPage extends React.Component {
     console.log(classTypes)
     return (
       <Layout>
-        <SEO title="Teachers" />
+        <SEO title="Class Types" />
         <ContentContainer>
-          <Quote page={page}/>
           <FlexContainer>
             {classTypes.map(classType => {
               return (

@@ -15,7 +15,7 @@ class AboutPage extends React.Component {
 
     return (
       <Layout>
-        <SEO title="Teachers" />
+        <SEO title="About" />
         <ContentContainer>
           <Quote page={aboutContent.node} />
           <TripleTextColumnPage content={aboutContent}></TripleTextColumnPage>
