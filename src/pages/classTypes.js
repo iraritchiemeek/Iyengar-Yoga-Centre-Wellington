@@ -1,11 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import ClassTypesList from "../components/classTypesList"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer } from "../styled-components/layout"
+import { ContentContainer, FlexContainer } from "../styled-components/layout"
 import Quote from "../components/quote"
+import SingleTextColumn from '../components/singleTextColumn'
+
 
 
 class ClassTypesPage extends React.Component {
@@ -13,13 +14,19 @@ class ClassTypesPage extends React.Component {
     const { data } = this.props
     const classTypes = data.allContentfulClassType.edges
     const page = data.allContentfulPage.edges[0].node
-
+    console.log(classTypes)
     return (
       <Layout>
         <SEO title="Teachers" />
         <ContentContainer>
           <Quote page={page}/>
-          <ClassTypesList classTypes={classTypes} />
+          <FlexContainer>
+            {classTypes.map(classType => {
+              return (
+                <SingleTextColumn title={classType.node.longName} content={classType.node.description.json} />
+              )
+            })}
+          </FlexContainer>
         </ContentContainer>
       </Layout>
     )
