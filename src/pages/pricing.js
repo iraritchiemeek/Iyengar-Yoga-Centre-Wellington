@@ -25,7 +25,7 @@ class PricingPage extends React.Component {
           <FlexContainer>
             {singleTextColumns.map(content => {
               return (
-                <SingleTextColumn content={content}/>
+                <SingleTextColumn title={content.title} content={content.conent.json}/>
               )
             })}
           </FlexContainer>

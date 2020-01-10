@@ -5,13 +5,12 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 
 const SingleTextColumn = props => {
-	const { content } = props
-	if (!content) return null
-		console.log(content)
+	const { title, content } = props
+	if (!content || !title) return null
 	return (
 		<FlexItem width="33.333%">
-			<h2>{content.title}</h2>
-			{documentToReactComponents(content.content.json)}
+			<h2>{title}</h2>
+			{documentToReactComponents(content)}
 		</FlexItem>
 	)
 }

@@ -2,6 +2,7 @@ import React from "react"
 import { FlexContainer, FlexItem, TripleColumnText } from '../styled-components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
+import SingleTextColumn from "./singleTextColumn"
 
 
 const ClassTypesList = props => {
@@ -13,10 +14,7 @@ const ClassTypesList = props => {
 	const renderClassType = classType => {
 		classType = classType.node
 		return (
-			<FlexItem width="33.333%">
-				<h2>{classType.longName}</h2>
-				{documentToReactComponents(classType.description.json)}
-			</FlexItem>
+			<SingleTextColumn title={classType.longName} content={classType.description.json}/>
 		)
 	}
 
