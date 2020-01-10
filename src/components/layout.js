@@ -42,13 +42,16 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 1.2em 0;
   }
   h1 {
-    font-size: 22px;
-    color: black;
+    font-size: 50px;
+    font-weight: bold;
+    color: ${color.lightBlue};
+    margin: 0;
   }
   h2 {
     font-weight: 400;
     font-size: 20px;
     margin: 1.2em 0 0.8em 0;
+    color: ${color.lightBlue};
   }
   h3 {
     font-weight: 400;

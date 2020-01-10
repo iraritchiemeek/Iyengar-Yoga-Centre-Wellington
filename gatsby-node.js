@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   retreats.forEach((retreat, index) => {
     createPage({
-      path: retreat.node.title.replace(/\s/g, '-').toLowerCase(),
+      path: '/retreats/' + retreat.node.title.replace(/\s/g, '-').toLowerCase(),
       component: retreatPage,
       context: {
         title: retreat.node.title

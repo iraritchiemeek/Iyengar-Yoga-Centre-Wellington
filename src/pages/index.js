@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import TripleTextColumnPage from "../components/tripleTextColumnPage"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { ContentContainer, VerticalSpace } from "../styled-components/layout"

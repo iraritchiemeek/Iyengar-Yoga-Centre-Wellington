@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import TripleTextColumnPage from "../components/tripleTextColumnPage"
+import TripleTextColumn from "../components/tripleTextColumn"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { ContentContainer } from "../styled-components/layout"
@@ -18,8 +18,8 @@ class AboutPage extends React.Component {
         <SEO title="About" />
         <ContentContainer>
           <Quote page={aboutContent.node} />
-          <TripleTextColumnPage content={aboutContent}></TripleTextColumnPage>
-          <TripleTextColumnPage content={iyengarContent}></TripleTextColumnPage>
+          {/* <TripleTextColumnPage content={aboutContent}></TripleTextColumnPage>
+          <TripleTextColumnPage content={iyengarContent}></TripleTextColumnPage> */}
         </ContentContainer>
       </Layout>
     )
