@@ -41,11 +41,16 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.7em;
     margin: 0 0 1.2em 0;
   }
-
   h2 {
     font-weight: 400;
     font-size: 20px;
     margin: 1.2em 0 0.8em 0;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 18px;
+    margin: 1.2em 0 0.8em 0;
+    color: black;
   }
 `
 

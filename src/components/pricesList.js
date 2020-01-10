@@ -10,29 +10,27 @@ const PricesList = props => {
  	const { prices } = props
 	if (!prices) return null
 
-	const renderTitle = price => {
-		if (!price.allottedClasses) return null
-		if (price.allottedClasses == 1) {
-			return (
-				<h2>Casual Class</h2>
-			)
-		} else {
-			return (
-				<h2>{price.allottedClasses} Class Card</h2>
-			)
-		}
-	}
-
 	const renderValidity = price => {
 		const validity = price.validityPeriod ? price.validityPeriod : null
 		if (validity) {
 			return (
-				<NoSpaceP>Valid for {validity} week{validity > 1 ? `s` : ``}</NoSpaceP>
+				`Valid ${validity} week${validity > 1 ? `s` : ``}`
 			)
 		} else {
 			return (
-				<NoSpaceP>No Expiry</NoSpaceP>
+				`No Expiry`
 			)
+		}
+	}
+
+	const renderDescription = price => {
+		const description = price.description ? price.description.json : null
+		if (description) {
+			return (
+				documentToReactComponents(description)
+			)
+		} else {
+			return null
 		}
 	}
 
@@ -40,10 +38,8 @@ const PricesList = props => {
 		price = price.node
 		return (
 			<FlexItem width="33.333%">
-				{renderTitle(price)}
-				{renderValidity(price)}
-				<NoSpaceP>${price.price}</NoSpaceP>
-				<VerticalSpace space="30px"/>
+				<h2>{price.title}</h2>
+				<h3>${price.price} - {renderValidity(price)}</h3>
 				<Button><NoSpaceP><a href={punchPassUrl + price.punchPassId} target="_blank">Purchase</a></NoSpaceP></Button>
 			</FlexItem>
 		)
