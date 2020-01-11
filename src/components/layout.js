@@ -49,14 +49,14 @@ const GlobalStyle = createGlobalStyle`
   }
   h2 {
     font-weight: 400;
-    font-size: 20px;
-    margin: 1.2em 0 0.8em 0;
+    font-size: 25px;
+    margin: 1em 0 0 0;
     color: ${color.lightBlue};
   }
   h3 {
     font-weight: 400;
     font-size: 18px;
-    margin: 1.2em 0 0.8em 0;
+    margin: 1em 0 0.6em 0;
     color: black;
   }
 `

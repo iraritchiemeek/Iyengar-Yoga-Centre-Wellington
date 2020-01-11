@@ -7,15 +7,13 @@ const TripleTextColumn = props => {
  	const { content } = props
 	if (!content) return null
 
-	console.log(content)
-
 	const renderContent = content => {
 		content = content
 		return (
 			<React.Fragment>
 				<h2>{content.title}</h2>
 				<TripleColumnText>{documentToReactComponents(content.content.json)}</TripleColumnText>
-				</React.Fragment>
+			</React.Fragment>
 		)
 	}
 
