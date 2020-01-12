@@ -6,20 +6,23 @@ import Img from "gatsby-image"
 import { ContentContainer, VerticalSpace } from "../styled-components/layout"
 import Timetable from "../components/timetable"
 import Quote from '../components/quote'
+import TripleTextColumn from "../components/tripleTextColumn"
 
 
 class Index extends React.Component {
   render() {
     const { data } = this.props
-    const classes = data.allContentfulClass.edges
     const page = data.contentfulPage
+
 
     return (
       <Layout>
         <SEO title="Home" />
         <ContentContainer>
+          <Img fluid={page.image.fluid} />
+          <VerticalSpace space="20px"/>
           <Quote author={page.quote.author} content={page.quote.content.content}/>
-          <Timetable classes={classes} /> 
+          <TripleTextColumn content={page.tripleTextColumns[0].content} title={page.tripleTextColumns[0].title}></TripleTextColumn>
         </ContentContainer>
       </Layout>
     )
@@ -32,27 +35,26 @@ export const pageQuery = graphql`
   query {
     contentfulPage(contentful_id: {eq: "5Rmbm3BYGzBDz42G0IAW2z"}){
       title
+      image {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      tripleTextColumns {
+        photos {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+        title
+        content {
+          json
+        }
+      }
       quote {
         author
         content {
           content
-        }
-      }
-    }
-    allContentfulClass(
-      sort: {fields: [startTime] order: ASC}
-    ){
-      edges {
-        node {
-          title
-          startTime
-          endTime
-          teacher {
-            name
-          }
-          classLevel {
-            longName
-          }
         }
       }
     }
