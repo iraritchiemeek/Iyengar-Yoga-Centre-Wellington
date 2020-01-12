@@ -13,7 +13,6 @@ class ClassTypesPage extends React.Component {
   render() {
     const { data } = this.props
     const classTypes = data.allContentfulClassType.edges
-    const page = data.allContentfulPage.edges[0].node
     console.log(classTypes)
     return (
       <Layout>
@@ -36,14 +35,6 @@ export default ClassTypesPage
 
 export const pageQuery = graphql`
   query {
-    contentfulPage(contentful_id: {eq: "2YqZrgz26PjdcOOYFP39Cu"}){
-      quote {
-        author
-        content {
-          content
-        }
-      }
-    }
     allContentfulClassType {
       edges {
         node {

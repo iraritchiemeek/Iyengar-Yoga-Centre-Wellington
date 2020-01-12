@@ -13,14 +13,14 @@ class PricingPage extends React.Component {
   render() {
     const { data } = this.props
     const prices = data.allContentfulPrice.edges
-    const page = data.allContentfulPage.edges[0].node
+    const page = data.contentfulPage
     const singleTextColumns = page.singleTextColumns
 
     return (
       <Layout>
         <SEO title="Pricing" />
         <ContentContainer>
-          <Quote page={page}/>
+          <Quote author={page.quote.author} content={page.quote.content.content}/>
           <PricesList prices={prices}></PricesList>
           <FlexContainer>
             {singleTextColumns.map(content => {
