@@ -30,36 +30,22 @@ export default AboutPage
 
 export const pageQuery = graphql`
   query {
-    aboutPage: allContentfulPage(
-      filter: {pageId: {eq: "about"}}
-    ){
-      edges {
-        node {
-          headerQuote {
-            headerQuote
-          }
-          headerQuoteAuthor
-          tripleTextColumnTitle
-          tripleTextColumnContent {
-            json
+    aboutPage: contentfulPage(contentful_id: {eq: "3CVGZB1c7gS08gBRNa9P6d"}){
+      quote {
+        content {
+          content
+        }
+        author
+      }
+      tripleTextColumns {
+        photos {
+          fluid {
+            ...GatsbyContentfulFluid
           }
         }
-      }
-    }
-    iyengarYogaPage: allContentfulPage(
-      filter: {pageId: {eq: "iyengarYoga"}}
-    ){
-      edges {
-        node {
-          tripleTextColumnTitle
-          tripleTextColumnPhotos {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-          }
-          tripleTextColumnContent {
-            json
-          }
+        title
+        content {
+          json
         }
       }
     }

@@ -1,8 +1,7 @@
 import React from "react"
-import { FlexContainer, FlexItem, TripleColumnText, Button, VerticalSpace } from '../styled-components/layout'
+import { FlexContainer, FlexItem, Button } from '../styled-components/layout'
 import { NoSpaceP } from '../styled-components/text'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Img from "gatsby-image"
 
 const punchPassUrl = `https://wellingtonyoga.punchpass.com/passes/`
 
@@ -23,17 +22,6 @@ const PricesList = props => {
 		}
 	}
 
-	const renderDescription = price => {
-		const description = price.description ? price.description.json : null
-		if (description) {
-			return (
-				documentToReactComponents(description)
-			)
-		} else {
-			return null
-		}
-	}
-
 	const renderPrice = price => {
 		price = price.node
 		return (
@@ -44,8 +32,6 @@ const PricesList = props => {
 			</FlexItem>
 		)
 	}
-
-	
 
 	const renderPrices = prices => prices.map(renderPrice)
 

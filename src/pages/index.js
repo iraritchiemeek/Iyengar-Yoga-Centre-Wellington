@@ -30,16 +30,12 @@ export default Index
 
 export const pageQuery = graphql`
   query {
-    allContentfulPage(
-      filter: {pageId: {eq: "home"}}
-    ){
-      edges {
-        node {
-          title
-          headerQuote {
-            headerQuote
-          }
-          headerQuoteAuthor
+    page: contentfulPage(contentful_id: {eq: "5Rmbm3BYGzBDz42G0IAW2z"}){
+      title
+      quote {
+        author
+        content {
+          content
         }
       }
     }

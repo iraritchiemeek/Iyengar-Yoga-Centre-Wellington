@@ -31,16 +31,10 @@ export default TeachersPage
 
 export const pageQuery = graphql`
   query {
-    allContentfulPage(
-      filter: {
-        pageId: {eq: "teachers"}
-      }
-    ){
-      edges {
-        node {
-          headerQuote {
-            headerQuote
-          }
+    contentfulPage(contentful_id: {eq: "27j8KPTIxGr0T67x3Cnyj"}){
+      quote {
+        content {
+          content
         }
       }
     }

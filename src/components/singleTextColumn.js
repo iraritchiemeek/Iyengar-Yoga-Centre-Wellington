@@ -15,8 +15,6 @@ const SingleTextColumn = props => {
 
 	const { title, content, image } = props
 
-	console.log(image)
-	
 	if (!content || !title) return null
 	return (
 		<FlexItem width="33.333%">

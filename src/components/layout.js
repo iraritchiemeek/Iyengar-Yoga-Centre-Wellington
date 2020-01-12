@@ -7,7 +7,6 @@ import { color, spacing } from "../styled-components/variables"
 import { VerticalSpace } from '../styled-components/layout'
 import "typeface-open-sans"
 
-
 const GlobalStyle = createGlobalStyle`
   body, html {
     width: 100%;
@@ -67,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulAsset(
+      logo: allContentfulAsset(
         filter: {contentful_id: {eq: "3TEuRazbQ8KcmQh3AfugSq"}}
       ){
         edges {
@@ -87,15 +86,12 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div>
-      <Header siteTitle={data.site.siteMetadata.title} logo={data.allContentfulAsset.edges[0].node.fluid} />
+    <React.Fragment>
+      <Header siteTitle={data.site.siteMetadata.title} logo={data.logo.edges[0].node.fluid} />
       <GlobalStyle />
       <main>{children}</main>
       <VerticalSpace />
-        {/* <footer>
-          © Copyright Tessa Meek {new Date().getFullYear()}. All rights reserved.
-        </footer>*/}
-    </div>
+    </React.Fragment>
   )
 }
 

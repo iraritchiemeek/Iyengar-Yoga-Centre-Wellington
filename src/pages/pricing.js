@@ -29,7 +29,6 @@ class PricingPage extends React.Component {
               )
             })}
           </FlexContainer>
-          <TripleImage page={page} />
         </ContentContainer>
       </Layout>
     )
@@ -40,26 +39,17 @@ export default PricingPage
 
 export const pageQuery = graphql`
   query {
-    allContentfulPage(
-      filter: {pageId: {eq: "pricing"}}
-    ){
-      edges {
-        node {
-          singleTextColumns {
-            title
-            content {
-              json
-            }
-          }
-          headerQuote {
-            headerQuote
-          }
-          headerQuoteAuthor
-          tripleTextColumnPhotos {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-          }
+    contentfulPage(contentful_id: {eq: "5EP3fnkDJJ8k9tZCnvnIy8"}){
+      singleTextColumns {
+        title
+        content {
+          json
+        }
+      }
+      quote {
+        author
+        content {
+          content
         }
       }
     }

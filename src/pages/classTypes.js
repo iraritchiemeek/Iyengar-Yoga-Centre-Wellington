@@ -36,17 +36,11 @@ export default ClassTypesPage
 
 export const pageQuery = graphql`
   query {
-    allContentfulPage(
-      filter: {
-        pageId: {eq: "classTypes"}
-      }
-    ){
-      edges {
-        node {
-            headerQuote {
-              headerQuote
-            }
-            headerQuoteAuthor
+    contentfulPage(contentful_id: {eq: "2YqZrgz26PjdcOOYFP39Cu"}){
+      quote {
+        author
+        content {
+          content
         }
       }
     }

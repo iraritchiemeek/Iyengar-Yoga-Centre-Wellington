@@ -34,16 +34,10 @@ export default TimetablePage
 
 export const pageQuery = graphql`
   query {
-    allContentfulPage(
-      filter: {pageId: {eq: "timetable"}}
-    ){
-      edges {
-        node {
-          image {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-          }
+    contentfulPage(contentful_id: {eq: "1JjlWGljFFf4F1DyC3dM0K"}){
+      image {
+        fluid {
+          ...GatsbyContentfulFluid
         }
       }
     }

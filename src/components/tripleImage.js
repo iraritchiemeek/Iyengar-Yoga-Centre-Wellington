@@ -4,10 +4,11 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 
 const TripleImage = props => {
-	const { page } = props
+	const { images } = props
+	console.log(images)
 	return (
 		<FlexContainer>
-			{page.tripleTextColumnPhotos.map((image) => {
+			{images.map((image) => {
 				return (
 					<FlexItem width="33.333%">
 						<Img fluid={image.fluid} />
