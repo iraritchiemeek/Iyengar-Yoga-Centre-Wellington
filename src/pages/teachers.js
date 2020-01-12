@@ -12,13 +12,13 @@ class TeachersPage extends React.Component {
   render() {
     const { data } = this.props
     const teachers = data.allContentfulTeacher.edges
-    const page = data.allContentfulPage.edges[0].node
+    const page = data.contentfulPage
 
     return (
       <Layout>
         <SEO title="Teachers" />
         <ContentContainer>
-          <Quote page={page} />
+          <Quote content={page.quote.content.content} />
           <VerticalSpace space="30px"/>
           <TeachersList teachers={teachers}></TeachersList>
         </ContentContainer>
