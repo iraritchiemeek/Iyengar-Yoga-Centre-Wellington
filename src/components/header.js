@@ -9,6 +9,7 @@ const Header = ({ siteTitle, logo }) => (
   	<nav>
   		<NavList>
         <Logo><Link to="//"><Img fluid={logo}>About</Img></Link></Logo>
+        <NavItem><Link activeClassName="active" to="/timetable/">Timetable</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/about/">About</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/teachers/">Teachers</Link></NavItem>
   			<NavItem><Link activeClassName="active" to="/classTypes/">Class Levels</Link></NavItem>

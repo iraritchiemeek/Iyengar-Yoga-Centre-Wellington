@@ -12,7 +12,7 @@ class TimetablePage extends React.Component {
   render() {
     const { data } = this.props
     const classes = data.allContentfulClass.edges
-    const pageImage = data.allContentfulPage.edges[0].node.image.fluid
+    const pageImage = data.contentfulPage.image
 
     return (
       <Layout>
