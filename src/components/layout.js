@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
   } 
   header {
     padding: 0 30px;
@@ -50,16 +51,16 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   h2 {
-    font-weight: 400;
     font-size: 25px;
     margin: 1em 0 0 0;
     color: ${color.lightBlue};
+    font-weight: 300;
   }
   h3 {
-    font-weight: 400;
     font-size: 18px;
     margin: 1em 0 0.6em 0;
     color: black;
+    font-weight: 300;
   }
 `
 

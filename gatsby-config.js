@@ -3,7 +3,7 @@ require("dotenv").config({
 })
 
 module.exports = {
-  pathPrefix: "/Iyengar-Yoga-Centre-Wellington",
+  pathPrefix: `/Iyengar-Yoga-Centre-Wellington`,
   siteMetadata: {
     title: `The Iyengar Yoga Centre of Wellington`,
     description: `...`,
