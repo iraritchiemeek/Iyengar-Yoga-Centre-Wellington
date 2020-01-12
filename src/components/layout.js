@@ -5,6 +5,8 @@ import Header from "./header"
 import { createGlobalStyle } from "styled-components"
 import { color, spacing } from "../styled-components/variables"
 import { VerticalSpace } from '../styled-components/layout'
+import "typeface-open-sans"
+
 
 const GlobalStyle = createGlobalStyle`
   body, html {

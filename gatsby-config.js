@@ -12,17 +12,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Open Sans`,
-            variants: [`300`, `700`]
-          }
-        ]
-      }
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `ikoh49rqx0m9`,
