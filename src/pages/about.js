@@ -10,16 +10,14 @@ import Quote from "../components/quote"
 class AboutPage extends React.Component {
   render() {
     const { data } = this.props
-    const aboutContent = data.aboutPage.edges[0]
-    const iyengarContent = data.iyengarYogaPage.edges[0]
+    const aboutPage = data.aboutPage
 
     return (
       <Layout>
         <SEO title="About" />
         <ContentContainer>
-          <Quote page={aboutContent.node} />
-          {/* <TripleTextColumnPage content={aboutContent}></TripleTextColumnPage>
-          <TripleTextColumnPage content={iyengarContent}></TripleTextColumnPage> */}
+          <Quote author={aboutPage.quote.author} content={aboutPage.quote.content.content}/>
+          <TripleTextColumn content={aboutPage.tripleTextColumns[0].content} title={aboutPage.tripleTextColumns[0].title}></TripleTextColumn>
         </ContentContainer>
       </Layout>
     )

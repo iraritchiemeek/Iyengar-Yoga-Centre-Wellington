@@ -4,15 +4,15 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 
 const TripleTextColumn = props => {
- 	const { content } = props
+ 	const { content, title } = props
 	if (!content) return null
 
 	const renderContent = content => {
 		content = content
 		return (
 			<React.Fragment>
-				<h2>{content.title}</h2>
-				<TripleColumnText>{documentToReactComponents(content.content.json)}</TripleColumnText>
+				<h2>{title}</h2>
+				<TripleColumnText>{documentToReactComponents(content.json)}</TripleColumnText>
 			</React.Fragment>
 		)
 	}
