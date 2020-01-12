@@ -12,13 +12,13 @@ class Index extends React.Component {
   render() {
     const { data } = this.props
     const classes = data.allContentfulClass.edges
-    const page = data.allContentfulPage.edges[0].node
+    const page = data.contentfulPage
 
     return (
       <Layout>
         <SEO title="Home" />
         <ContentContainer>
-          <Quote page={page}/>
+          <Quote author={page.quote.author} content={page.quote.content.content}/>
           <Timetable classes={classes} /> 
         </ContentContainer>
       </Layout>
@@ -30,7 +30,7 @@ export default Index
 
 export const pageQuery = graphql`
   query {
-    page: contentfulPage(contentful_id: {eq: "5Rmbm3BYGzBDz42G0IAW2z"}){
+    contentfulPage(contentful_id: {eq: "5Rmbm3BYGzBDz42G0IAW2z"}){
       title
       quote {
         author
