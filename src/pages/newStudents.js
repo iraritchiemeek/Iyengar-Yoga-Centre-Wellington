@@ -38,7 +38,12 @@ export default newStudentsPage
 
 export const pageQuery = graphql`
   query {
-    allContentfulClassType {
+    allContentfulClassType(
+      sort: {
+        fields: [order]
+        order: ASC
+      }
+    ){
       edges {
         node {
           longName

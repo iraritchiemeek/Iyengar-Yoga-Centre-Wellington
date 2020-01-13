@@ -35,9 +35,15 @@ export default ClassTypesPage
 
 export const pageQuery = graphql`
   query {
-    allContentfulClassType {
+    allContentfulClassType(
+      sort: {
+        fields: [order]
+        order: DESC
+      }
+    ){
       edges {
         node {
+          order
           longName
           shortName
           description {

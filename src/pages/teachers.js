@@ -48,7 +48,7 @@ export const pageQuery = graphql`
         fields: [order]
         order: ASC
       }
-      ){
+    ){
       edges {
         node {
           order
