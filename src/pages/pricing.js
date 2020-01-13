@@ -21,8 +21,8 @@ class PricingPage extends React.Component {
         <SEO title="Pricing" />
         <ContentContainer>
           <Quote author={page.quote.author} content={page.quote.content.content}/>
-          <PricesList prices={prices}></PricesList>
           <FlexContainer>
+            <PricesList prices={prices}></PricesList>
             {singleTextColumns.map(content => {
               return (
                 <SingleTextColumn title={content.title} content={content.content.json}/>
@@ -57,9 +57,7 @@ export const pageQuery = graphql`
       edges {
         node {
           title
-          description {
-            json
-          }
+          terms
           validityPeriod
           price
           punchPassId

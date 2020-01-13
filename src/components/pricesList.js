@@ -1,5 +1,5 @@
 import React from "react"
-import { FlexContainer, FlexItem, Button } from '../styled-components/layout'
+import { FlexContainer, FlexItem, Button, VerticalSpace} from '../styled-components/layout'
 import { NoSpaceP } from '../styled-components/text'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
@@ -22,23 +22,35 @@ const PricesList = props => {
 		}
 	}
 
+	const renderTerms = price => {
+		console.log(price)
+		if (!price.terms) {
+			return null 
+		} else {
+			return (
+				price.terms
+			)
+		}
+	}
+
 	const renderPrice = price => {
 		price = price.node
 		return (
-			<FlexItem>
-				<h2>{price.title}</h2>
-				<h3>${price.price} - {renderValidity(price)}</h3>
+			<React.Fragment>
+				<h2>{price.title} - ${price.price}</h2>
+				<NoSpaceP>{renderTerms(price)} {renderValidity(price)}</NoSpaceP>
+				<VerticalSpace space="5px" />
 				<Button><NoSpaceP><a href={punchPassUrl + price.punchPassId} target="_blank">Purchase</a></NoSpaceP></Button>
-			</FlexItem>
+			</React.Fragment>
 		)
 	}
 
 	const renderPrices = prices => prices.map(renderPrice)
 
 	return (
-		<FlexContainer>
+		<FlexItem>
 			{renderPrices(prices)}
-		</FlexContainer>
+		</FlexItem>
 	)
 }
 
