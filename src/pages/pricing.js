@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import PricesList from "../components/pricesList"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer, VerticalSpace, FlexContainer } from "../styled-components/layout"
+import { ContentContainer, VerticalSpace, FlexContainer, InnerContainer } from "../styled-components/layout"
 import TripleImage from '../components/tripleImage'
 import Quote from '../components/quote'
 import SingleTextColumn from '../components/singleTextColumn'
@@ -20,6 +20,10 @@ class PricingPage extends React.Component {
       <Layout>
         <SEO title="Pricing" />
         <ContentContainer>
+          <InnerContainer>
+            <h1>{page.title}</h1>
+          </InnerContainer>
+          <VerticalSpace space="15px"/>
           <Quote author={page.quote.author} content={page.quote.content.content}/>
           <FlexContainer>
             <PricesList prices={prices}></PricesList>
@@ -40,6 +44,7 @@ export default PricingPage
 export const pageQuery = graphql`
   query {
     contentfulPage(contentful_id: {eq: "5EP3fnkDJJ8k9tZCnvnIy8"}){
+      title
       singleTextColumns {
         title
         content {

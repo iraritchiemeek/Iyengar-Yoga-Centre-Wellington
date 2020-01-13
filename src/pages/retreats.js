@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer, FlexContainer, FlexItem } from "../styled-components/layout"
+import { ContentContainer, FlexContainer, FlexItem, InnerContainer, VerticalSpace } from "../styled-components/layout"
 import { NoSpaceP } from "../styled-components/text"
 import Quote from "../components/quote"
 import SingleTextColumn from '../components/singleTextColumn'
@@ -24,6 +24,10 @@ class RetreatsPage extends React.Component {
       <Layout>
         <SEO title="Class Types" />
         <ContentContainer>
+          <InnerContainer>
+            <h1>Upcoming Retreats</h1>
+          </InnerContainer>
+          <VerticalSpace space="15px" />
           <FlexContainer>
             {retreats.map(retreat => {
               return (
