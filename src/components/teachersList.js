@@ -9,7 +9,7 @@ const TeachersList = props => {
 
 	const renderTeacher = teacher => {
 		teacher = teacher.node
-		if (teacher.mainTeacher) {
+		if (teacher.order == 1) {
 			return (
 				<React.Fragment>
 					<FlexItem>

@@ -45,12 +45,13 @@ export const pageQuery = graphql`
     }
     allContentfulTeacher(
       sort: {
-        fields: [mainTeacher]
-        order: DESC
+        fields: [order]
+        order: ASC
       }
       ){
       edges {
         node {
+          order
           name
           description {
             json
@@ -60,7 +61,6 @@ export const pageQuery = graphql`
               ...GatsbyContentfulFluid
             }
           }
-          mainTeacher
         }
       }
     }
