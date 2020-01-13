@@ -27,7 +27,7 @@ class RetreatsPage extends React.Component {
           <FlexContainer>
             {retreats.map(retreat => {
               return (
-                  <FlexItem width="33.333%">
+                  <FlexItem>
                     <Link to={`/retreats/${slug(retreat.node.title)}`}>
                       <Img fluid={retreat.node.mainPhoto.fluid} />
                       <h2>{retreat.node.title}</h2>

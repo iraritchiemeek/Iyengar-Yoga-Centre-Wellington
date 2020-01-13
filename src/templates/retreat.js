@@ -23,13 +23,13 @@ class Retreat extends React.Component {
         <SEO title="Retreat" />
         <ContentContainer>
           <FlexContainer>
-            <FlexItem width="33.333%">
+            <FlexItem>
               <Img fluid={retreat.mainPhoto.fluid} />
             </FlexItem>
-            <FlexItem width="33.333%">
+            <FlexItem>
               <Img fluid={retreat.mainPhoto.fluid} />
             </FlexItem>
-            <FlexItem width="33.333%">
+            <FlexItem>
               <Img fluid={retreat.mainPhoto.fluid} />
             </FlexItem>
           </FlexContainer>

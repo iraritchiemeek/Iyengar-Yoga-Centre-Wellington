@@ -10,7 +10,7 @@ const TripleImage = props => {
 		<FlexContainer>
 			{images.map((image) => {
 				return (
-					<FlexItem width="33.333%">
+					<FlexItem>
 						<Img fluid={image.fluid} />
 					</FlexItem>
 				)

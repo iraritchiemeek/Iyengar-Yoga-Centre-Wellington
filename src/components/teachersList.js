@@ -12,16 +12,16 @@ const TeachersList = props => {
 		if (teacher.mainTeacher) {
 			return (
 				<React.Fragment>
-					<FlexItem width="33.333%">
+					<FlexItem>
 						<Img fluid={teacher.image.fluid} />
 					</FlexItem>
-					<FlexItem width="33.333%">
+					<FlexItem>
 						<Img fluid={teacher.image.fluid} />
 					</FlexItem>
-					<FlexItem width="33.333%">
+					<FlexItem>
 						<Img fluid={teacher.image.fluid} />
 					</FlexItem>
-					<FlexItem width="100%">
+					<FlexItem fullWidth >
 						<h2>{teacher.name}</h2>
 						<TripleColumnText>{documentToReactComponents(teacher.description.json)}</TripleColumnText>
 					</FlexItem>
@@ -29,7 +29,7 @@ const TeachersList = props => {
 			)
 		} else {
 			return (
-				<FlexItem width="33.333%">
+				<FlexItem>
 					<Img fluid={teacher.image.fluid} />
 					<h2>{teacher.name}</h2>
 					{documentToReactComponents(teacher.description.json)}

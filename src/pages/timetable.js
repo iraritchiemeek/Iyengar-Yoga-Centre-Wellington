@@ -20,7 +20,7 @@ class TimetablePage extends React.Component {
         <ContentContainer>
           <Timetable classes={classes} /> 
           <FlexContainer>
-            <FlexItem width="100%">
+            <FlexItem fullWidth >
               <Img fluid={pageImage} objectFit="cover"/>
             </FlexItem>
           </FlexContainer>

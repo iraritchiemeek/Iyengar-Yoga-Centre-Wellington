@@ -25,7 +25,7 @@ const PricesList = props => {
 	const renderPrice = price => {
 		price = price.node
 		return (
-			<FlexItem width="33.333%">
+			<FlexItem>
 				<h2>{price.title}</h2>
 				<h3>${price.price} - {renderValidity(price)}</h3>
 				<Button><NoSpaceP><a href={punchPassUrl + price.punchPassId} target="_blank">Purchase</a></NoSpaceP></Button>

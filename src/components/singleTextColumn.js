@@ -17,7 +17,7 @@ const SingleTextColumn = props => {
 
 	if (!content || !title) return null
 	return (
-		<FlexItem width="33.333%">
+		<FlexItem>
 			{renderImage(image)}
 			<h2>{title}</h2>
 			{documentToReactComponents(content)}

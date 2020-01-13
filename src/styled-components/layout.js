@@ -52,14 +52,30 @@ export const FlexContainer = styled.div`
 export const FlexItem = styled.div`
 	width: 100%;
 	@media ${device.tablet} {
-		width: ${props => props.width || "100%"};
-		padding: 1.1em ${spacing.betweenItemSpace}em;
+		width: ${props => props.fullWidth ? "100%" : props.width};
+		padding: 1.1em ${props => props.fullWidth ? "0" : spacing.betweenItemSpace}em;
 		box-sizing: border-box;
+		${ props => {
+			if(!props.fullWidth) {
+				return (
+					`&:nth-of-type(1) {
+						padding: 1.1em ${spacing.betweenItemSpace * 2}em 1.1em 0;
+					}
+					&:nth-of-type(${Math.round(100 / parseFloat(props.width))}) {
+						padding: 1.1em 0 1.1em ${spacing.betweenItemSpace * 2}em;
+					}`
+				)
+			}
+		}}
 	}
 	h2 {
 		color: ${color.lightBlue};
 	}
 `
+
+FlexItem.defaultProps = {
+	width: "33.333%"
+}
 
 export const VerticalList = styled.ul`
 	list-style: none;
