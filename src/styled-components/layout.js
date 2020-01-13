@@ -25,6 +25,10 @@ export const NavItem = styled.li`
 	}
 `
 
+export const InnerContainer = styled.div`
+	padding: 0 ${spacing.betweenItemSpace}em;
+`
+
 export const Logo = styled.div`
 	cursor: pointer;
 	padding: .8em;
@@ -53,25 +57,15 @@ export const FlexItem = styled.div`
 	width: 100%;
 	@media ${device.tablet} {
 		width: ${props => props.fullWidth ? "100%" : props.width};
-		padding: 1.1em ${props => props.fullWidth ? "0" : spacing.betweenItemSpace}em;
+		padding: 1.1em ${spacing.betweenItemSpace}em;
 		box-sizing: border-box;
-		${ props => {
-			if(!props.fullWidth) {
-				return (
-					`&:nth-of-type(1) {
-						padding: 1.1em ${spacing.betweenItemSpace * 2}em 1.1em 0;
-					}
-					&:nth-of-type(${Math.round(100 / parseFloat(props.width))}) {
-						padding: 1.1em 0 1.1em ${spacing.betweenItemSpace * 2}em;
-					}`
-				)
-			}
-		}}
 	}
 	h2 {
 		color: ${color.lightBlue};
 	}
 `
+
+const calcNthChild = width => Math.round(100 / parseFloat(width))
 
 FlexItem.defaultProps = {
 	width: "33.333%"

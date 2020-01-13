@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer, VerticalSpace } from "../styled-components/layout"
+import { ContentContainer, VerticalSpace, InnerContainer } from "../styled-components/layout"
 import Timetable from "../components/timetable"
 import Quote from '../components/quote'
 import TripleTextColumn from "../components/tripleTextColumn"
@@ -19,10 +19,18 @@ class Index extends React.Component {
       <Layout>
         <SEO title="Home" />
         <ContentContainer>
-          <Img fluid={page.image.fluid} />
+          <InnerContainer>
+            <Img fluid={page.image.fluid} />
+          </InnerContainer>
           <VerticalSpace space="20px"/>
           <Quote author={page.quote.author} content={page.quote.content.content}/>
-          <TripleTextColumn content={page.tripleTextColumns[0].content} title={page.tripleTextColumns[0].title}></TripleTextColumn>
+          {
+            page.tripleTextColumns.map(tripleTextColumn => {
+              return (
+                <TripleTextColumn images={tripleTextColumn.photos} content={tripleTextColumn.content} title={tripleTextColumn.title}></TripleTextColumn>
+              )
+            })
+          }
         </ContentContainer>
       </Layout>
     )

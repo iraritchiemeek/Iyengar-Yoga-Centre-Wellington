@@ -13,8 +13,10 @@ export const QuoteText = styled(NoSpaceP)`
 	line-height: 1.6em;
     font-size: 20px;
     color: ${color.darkGrey};
+    padding: 0 ${spacing.betweenItemSpace}em;
 `
 
 export const QuoteAuthor = styled(NoSpaceP)`
 	font-style: italic;
+    padding: 0 ${spacing.betweenItemSpace}em;
 `
