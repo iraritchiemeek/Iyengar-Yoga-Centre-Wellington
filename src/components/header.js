@@ -1,11 +1,11 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { NavList, NavItem , Logo} from "../styled-components/layout"
+import { NavList, NavItem, Logo, StyledHeader} from "../styled-components/layout"
 import Img from "gatsby-image"
 
 const Header = ({ siteTitle, logo }) => (
-  <header>
+  <StyledHeader>
   	<nav>
   		<NavList>
         <Logo><Link to="//"><Img fluid={logo}>About</Img></Link></Logo>
@@ -18,7 +18,7 @@ const Header = ({ siteTitle, logo }) => (
   			<NavItem><Link activeClassName="active" to="/contact/">Contact</Link></NavItem>
   		</NavList>
   	</nav>
-  </header>
+  </StyledHeader>
 )
 
 Header.propTypes = {

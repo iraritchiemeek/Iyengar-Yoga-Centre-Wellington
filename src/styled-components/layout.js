@@ -6,12 +6,33 @@ export const NavList = styled.ul`
 	margin: 0;
 	padding: 0;
 	display: flex;
+	flex-wrap: wrap;
+`
+
+export const StyledHeader = styled.header`
+	@media ${device.tablet} {
+		padding: 0 30px;
+		nav {
+			max-width: ${spacing.maxContentWidth};
+		}
+	}
+	padding: 0 15px;
+	box-sizing: border-box;
+	box-shadow: inset 0 -1px 0 0px rgba(0, 0, 0, 0.1);
+	nav {
+		padding: 8px 0;
+		margin: 0 auto;
+		max-width: 100%;
+	}
 `
 
 export const NavItem = styled.li`
+	width: 100%;
+	@media ${device.tablet} {
+		flex: 1;
+	}
 	padding: .8em;
 	text-align: center;
-	flex: 1;
 	a, a:visited, a:active {
 		font-size: 16px;
 		color: ${color.lightGrey};

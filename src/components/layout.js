@@ -14,17 +14,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-  } 
-  header {
-    padding: 0 30px;
+    max-width: 100%;
     box-sizing: border-box;
-    box-shadow: inset 0 -1px 0 0px rgba(0, 0, 0, 0.1);
-    nav {
-      padding: 8px 0;
-      max-width: ${spacing.maxContentWidth};
-      margin: 0 auto;
-    }
-  }
+  } 
   a {
     color: black;
     text-decoration: none;
