@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer, VerticalSpace, FlexContainer, FlexItem } from "../styled-components/layout"
+import { ContentContainer, VerticalSpace, FlexContainer, FlexItem, InnerContainer } from "../styled-components/layout"
 import TripleTextColumn from "../components/tripleTextColumn"
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -18,24 +18,30 @@ class Retreat extends React.Component {
     const endMonth = monthNames[new Date(retreat.endDate).getMonth()]
     const year = new Date(retreat.startDate).getFullYear()
 
+    console.log(retreat)
+
     return (
       <Layout>
         <SEO title="Retreat" />
         <ContentContainer>
+          <InnerContainer>
+            <h1>{retreat.title}</h1>
+            <h2>{startDate} {startMonth} - {endDate} {endMonth} {year}</h2>
+          </InnerContainer>
           <FlexContainer>
-            <FlexItem>
-              <Img fluid={retreat.mainPhoto.fluid} />
-            </FlexItem>
-            <FlexItem>
-              <Img fluid={retreat.mainPhoto.fluid} />
-            </FlexItem>
-            <FlexItem>
-              <Img fluid={retreat.mainPhoto.fluid} />
-            </FlexItem>
+            {retreat.photos.map(photo => {
+              return (
+                <FlexItem>
+                  <Img style={{ minHeight: '230px' }} fluid={photo.fluid} />
+                </FlexItem>
+              )
+            })}
           </FlexContainer>
-          <h1>{retreat.title}</h1>
-          <h2>{startDate} {startMonth} - {endDate} {endMonth} {year}</h2>
-          <TripleTextColumn content={retreat.tripleColumnText} />
+          {retreat.tripleTextColumns.map(column => {
+            return (
+              <TripleTextColumn content={column.content} title={column.title} />
+            )
+          })}
         </ContentContainer>
       </Layout>
     )
@@ -55,7 +61,12 @@ export const pageQuery = graphql`
           ...GatsbyContentfulFluid
         }
       }
-      tripleColumnText {
+      photos {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      tripleTextColumns {
         title
         content {
           json

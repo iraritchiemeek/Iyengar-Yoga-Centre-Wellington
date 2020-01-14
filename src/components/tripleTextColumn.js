@@ -5,10 +5,10 @@ import Img from "gatsby-image"
 
 const TripleTextColumn = props => {
  	const { content, title, images } = props
+ 	console.log(content)
 	if (!content) return null
 
 	const renderImages = images => {
-		console.log(images)
 		if (!images ) {
 			return null
 		} else {

@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer, FlexContainer, FlexItem, InnerContainer, VerticalSpace } from "../styled-components/layout"
+import { ContentContainer, FlexContainer, FlexItem, InnerContainer, VerticalSpace, Button } from "../styled-components/layout"
 import { NoSpaceP } from "../styled-components/text"
 import Quote from "../components/quote"
 import SingleTextColumn from '../components/singleTextColumn'
@@ -34,8 +34,11 @@ class RetreatsPage extends React.Component {
                   <FlexItem>
                     <Link to={`/retreats/${slug(retreat.node.title)}`}>
                       <Img style={{ minHeight: '230px' }} fluid={retreat.node.mainPhoto.fluid} />
+                      <VerticalSpace space="1em" />
                       <h2>{retreat.node.title}</h2>
                       <NoSpaceP>{renderDate(retreat.node.startDate)} - {renderDate(retreat.node.endDate)} {renderMonth(retreat.node.startDate)} {renderYear(retreat.node.startDate)}</NoSpaceP>
+                      <VerticalSpace space="0.2em" />
+                      <Button><NoSpaceP>Read More</NoSpaceP></Button>
                     </Link>
                   </FlexItem>
               )
@@ -57,12 +60,6 @@ export const pageQuery = graphql`
           startDate
           endDate
           title
-          tripleColumnText {
-            title
-            content {
-              json
-            }
-          }
           mainPhoto {
             fluid {
               ...GatsbyContentfulFluid

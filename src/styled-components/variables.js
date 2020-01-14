@@ -1,6 +1,7 @@
 
 export const color = {
-	lightBlue: `#6FCDE4`,
+	// lightBlue: `#6FCDE4`,
+	lightBlue: `#59C7DC`,
 	darkLightBlue: `#20AEC2`,
 	offBlack: `#1C1C1C`,
 	darkGrey: `#666`,
