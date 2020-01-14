@@ -33,7 +33,7 @@ class RetreatsPage extends React.Component {
               return (
                   <FlexItem>
                     <Link to={`/retreats/${slug(retreat.node.title)}`}>
-                      <Img style={{ minHeight: '230px' }} fluid={retreat.node.mainPhoto.fluid} />
+                      <Img style={{ height: '230px' }} fluid={retreat.node.mainPhoto.fluid} />
                       <VerticalSpace space="1em" />
                       <h2>{retreat.node.title}</h2>
                       <NoSpaceP>{renderDate(retreat.node.startDate)} - {renderDate(retreat.node.endDate)} {renderMonth(retreat.node.startDate)} {renderYear(retreat.node.startDate)}</NoSpaceP>

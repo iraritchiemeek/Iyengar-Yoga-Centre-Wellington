@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { ContentContainer, VerticalSpace, FlexContainer, FlexItem, InnerContainer } from "../styled-components/layout"
 import TripleTextColumn from "../components/tripleTextColumn"
+import SingleTextColumn from "../components/singleTextColumn"
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -18,30 +19,52 @@ class Retreat extends React.Component {
     const endMonth = monthNames[new Date(retreat.endDate).getMonth()]
     const year = new Date(retreat.startDate).getFullYear()
 
-    console.log(retreat)
+    const renderPhotos = retreat => {
+      if (!retreat.photos) return null
+      return (
+        <FlexContainer>
+          {retreat.photos.map(photo => {
+            return (
+              <FlexItem>
+                <Img style={{ height: '230px' }} fluid={photo.fluid} />
+              </FlexItem>
+            )
+          })}
+        </FlexContainer>
+      )
+    } 
+
+    const renderTripleTextColumns = retreat => {
+      if (!retreat.tripleTextColumns) return null
+      return (
+        retreat.tripleTextColumns.map(column => <TripleTextColumn content={column.content} title={column.title} /> )
+      )
+    }
+
+    const renderSingleTextColumns = retreat => {
+      if (!retreat.singleTextColumn) return null
+      return (
+        retreat.singleTextColumn.map(column => {
+          return (
+              <SingleTextColumn content={column.content.json} title={column.title} image={column.image} />
+          )
+        })
+      )
+    }
 
     return (
       <Layout>
         <SEO title="Retreat" />
         <ContentContainer>
+          {renderPhotos(retreat)}
           <InnerContainer>
             <h1>{retreat.title}</h1>
             <h2>{startDate} {startMonth} - {endDate} {endMonth} {year}</h2>
           </InnerContainer>
           <FlexContainer>
-            {retreat.photos.map(photo => {
-              return (
-                <FlexItem>
-                  <Img style={{ minHeight: '230px' }} fluid={photo.fluid} />
-                </FlexItem>
-              )
-            })}
+            {renderTripleTextColumns(retreat)}
+            {renderSingleTextColumns(retreat)}
           </FlexContainer>
-          {retreat.tripleTextColumns.map(column => {
-            return (
-              <TripleTextColumn content={column.content} title={column.title} />
-            )
-          })}
         </ContentContainer>
       </Layout>
     )
@@ -64,6 +87,17 @@ export const pageQuery = graphql`
       photos {
         fluid {
           ...GatsbyContentfulFluid
+        }
+      }
+      singleTextColumn {
+        title
+        content {
+          json
+        }
+        image {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
         }
       }
       tripleTextColumns {

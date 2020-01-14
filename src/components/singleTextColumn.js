@@ -1,13 +1,16 @@
 import React from "react"
 import { QuoteText, QuoteAuthor } from '../styled-components/text'
-import { FlexContainer, FlexItem} from '../styled-components/layout'
+import { FlexContainer, FlexItem, VerticalSpace} from '../styled-components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
 
 const renderImage = image => {
 	if (!image) return null
 	return (
-		<Img fluid={image.fluid} />
+		<React.Fragment>
+			<Img style={{ height: '230px' }} fluid={image.fluid} />
+			<VerticalSpace space="15px"/>
+		</React.Fragment>
 	)
 }
 
