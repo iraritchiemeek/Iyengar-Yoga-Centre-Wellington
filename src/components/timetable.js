@@ -4,6 +4,8 @@ import { NoSpaceP } from '../styled-components/text'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import Moment from 'react-moment'
+import moment from "moment"
 
 
 const Timetable = props => {
@@ -14,20 +16,12 @@ const Timetable = props => {
 
 	const weekdays = Object.keys(timetable)
 
-	const getClassWeekday = date => weekdays[new Date(date).getDay()]
+	const getClassWeekday = date => moment(date).format('dddd')
 
-	const renderTime = (hour, minute) => hour < 12 ? `${hour}${minute != 0 ? `:${minute}` : ``}am` : `${hour != 12 ? hour - 12 : hour}${minute != 0 ? `:${minute}` : ``}pm`
-
-	const classTime = date => {
-		console.log(date)
-		date = new Date(date)
-		console.log(date)
-		var hour = date.getHours() 
-		var minute = date.getMinutes() == 0 ? `` : date.getMinutes()
-		return renderTime(hour, minute)
-	}
+	const removeEmptyMinutesFilter = date => date.replace(':00', '')
 
 	const addClassToTimetable = yogaClass => {
+		console.log(getClassWeekday(yogaClass.startTime))
 		timetable[getClassWeekday(yogaClass.startTime)].push(yogaClass)
 	}
 
@@ -48,7 +42,10 @@ const Timetable = props => {
 						{timetable[weekday].map((yogaClass => {
 							return (
 								<VerticalListItem>
-									<strong><NoSpaceP margin="0">{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</NoSpaceP></strong>
+									<strong><NoSpaceP margin="0">
+										{/* classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)*/}
+										<Moment filter={removeEmptyMinutesFilter} format="h:mm" date={yogaClass.startTime} /> - <Moment filter={removeEmptyMinutesFilter} format="h:mma" date={yogaClass.endTime} />
+									</NoSpaceP></strong>
 									<NoSpaceP margin="0"><Link to="/classTypes/">{yogaClass.classLevel.longName} Class</Link></NoSpaceP>
 									<NoSpaceP margin="0"><Link to="/teachers/">Taught by {yogaClass.teacher.firstName}</Link></NoSpaceP>
 								</VerticalListItem>
