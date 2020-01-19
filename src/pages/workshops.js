@@ -13,37 +13,13 @@ const monthNames = ["January", "February", "March", "April", "May", "June", "Jul
 class WorkshopsPage extends React.Component {
   render() {
     const { data } = this.props
-    const retreats = data.allContentfulRetreat.edges
-
-    const renderDate = date => new Date(date).getDate()
-    const renderMonth = date => monthNames[new Date(date).getMonth()]
-    const renderYear = date => new Date(date).getFullYear()
-    const slug = title => title.replace(/\s/g, '-').toLowerCase()
+    const workshops = data.allContentfulWorkshop.edges
 
     return (
       <Layout>
-        <SEO title="Class Types" />
+        <SEO title="Workshops" />
         <ContentContainer>
-          <InnerContainer>
-            <h1>Upcoming Retreats</h1>
-          </InnerContainer>
-          <VerticalSpace space="15px" />
-          <FlexContainer>
-            {retreats.map(retreat => {
-              return (
-                  <FlexItem>
-                    <Link to={`/retreats/${slug(retreat.node.title)}`}>
-                      <Img style={{ height: '230px' }} fluid={retreat.node.mainPhoto.fluid} />
-                      <VerticalSpace space="1em" />
-                      <h2>{retreat.node.title}</h2>
-                      <NoSpaceP>{renderDate(retreat.node.startDate)} - {renderDate(retreat.node.endDate)} {renderMonth(retreat.node.startDate)} {renderYear(retreat.node.startDate)}</NoSpaceP>
-                      <VerticalSpace space="0.2em" />
-                      <Button><NoSpaceP>Read More</NoSpaceP></Button>
-                    </Link>
-                  </FlexItem>
-              )
-            })}
-          </FlexContainer>
+          
         </ContentContainer>
       </Layout>
     )
@@ -54,13 +30,21 @@ export default WorkshopsPage
 
 export const pageQuery = graphql`
   query {
-    allContentfulRetreat {
+    allContentfulWorkshop {
       edges {
         node {
           startDate
           endDate
           title
-          mainPhoto {
+          description {
+            json
+          }
+          full
+          price
+          teacher {
+            name
+          }
+          image {
             fluid {
               ...GatsbyContentfulFluid
             }

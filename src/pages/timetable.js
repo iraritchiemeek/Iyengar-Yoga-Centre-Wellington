@@ -49,7 +49,7 @@ export const pageQuery = graphql`
           startTime
           endTime
           teacher {
-            name
+            firstName
           }
           classLevel {
             longName

@@ -49,8 +49,8 @@ const Timetable = props => {
 							return (
 								<VerticalListItem>
 									<strong><NoSpaceP margin="0">{classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)}</NoSpaceP></strong>
-									<NoSpaceP margin="0"><Link to="/teachers/">{yogaClass.teacher.name}</Link></NoSpaceP>
-									<NoSpaceP margin="0"><Link to="/classTypes/">{yogaClass.classLevel.longName}</Link></NoSpaceP>
+									<NoSpaceP margin="0"><Link to="/classTypes/">{yogaClass.classLevel.longName} Class</Link></NoSpaceP>
+									<NoSpaceP margin="0"><Link to="/teachers/">Taught by {yogaClass.teacher.firstName}</Link></NoSpaceP>
 								</VerticalListItem>
 							)
 						}))}
