@@ -110,9 +110,9 @@ export const TripleColumnText = styled.div`
 `
 export const VerticalSpace = styled.div`
 	width: 100%;
-	padding: 30px 0;
+	padding: ${spacing.betweenItemSpace}em 0;
 	@media ${device.tablet} {
-		padding: ${props => props.space || "60px"} 0;
+		padding: ${props => props.space || `${spacing.betweenItemSpace}em`} 0;
 	}
 `
 

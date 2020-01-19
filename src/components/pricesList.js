@@ -41,6 +41,7 @@ const PricesList = props => {
 				<NoSpaceP>{renderTerms(price)} {renderValidity(price)}</NoSpaceP>
 				<VerticalSpace space="5px" />
 				<Button><NoSpaceP><a href={punchPassUrl + price.punchPassId} target="_blank">Purchase</a></NoSpaceP></Button>
+				<VerticalSpace/>
 			</React.Fragment>
 		)
 	}

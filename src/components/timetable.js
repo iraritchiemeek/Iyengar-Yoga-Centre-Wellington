@@ -19,14 +19,15 @@ const Timetable = props => {
 	const renderTime = (hour, minute) => hour < 12 ? `${hour}${minute != 0 ? `:${minute}` : ``}am` : `${hour != 12 ? hour - 12 : hour}${minute != 0 ? `:${minute}` : ``}pm`
 
 	const classTime = date => {
+		console.log(date)
 		date = new Date(date)
+		console.log(date)
 		var hour = date.getHours() 
 		var minute = date.getMinutes() == 0 ? `` : date.getMinutes()
 		return renderTime(hour, minute)
 	}
 
 	const addClassToTimetable = yogaClass => {
-		console.log(`${yogaClass.title} : ${new Date(yogaClass.startTime).getDay()}`)
 		timetable[getClassWeekday(yogaClass.startTime)].push(yogaClass)
 	}
 

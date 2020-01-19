@@ -1,5 +1,5 @@
 import React from "react"
-import { FlexContainer, FlexItem, TripleColumnText } from '../styled-components/layout'
+import { FlexContainer, FlexItem, TripleColumnText, VerticalSpace } from '../styled-components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from "gatsby-image"
 
@@ -31,6 +31,7 @@ const TeachersList = props => {
 			return (
 				<FlexItem>
 					<Img fluid={teacher.image.fluid} />
+					<VerticalSpace/>
 					<h2>{teacher.name}</h2>
 					{documentToReactComponents(teacher.description.json)}
 				</FlexItem>

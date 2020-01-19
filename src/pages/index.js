@@ -18,9 +18,6 @@ class Index extends React.Component {
       <Layout>
         <SEO title="Home" />
         <ContentContainer>
-          <InnerContainer>
-            <Img fluid={page.image.fluid} />
-          </InnerContainer>
           <VerticalSpace space="20px"/>
           <Quote author={page.quote.author} content={page.quote.content.content}/>
           {
