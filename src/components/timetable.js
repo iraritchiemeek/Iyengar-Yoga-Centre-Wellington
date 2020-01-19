@@ -21,7 +21,6 @@ const Timetable = props => {
 	const removeEmptyMinutesFilter = date => date.replace(':00', '')
 
 	const addClassToTimetable = yogaClass => {
-		console.log(getClassWeekday(yogaClass.startTime))
 		timetable[getClassWeekday(yogaClass.startTime)].push(yogaClass)
 	}
 
@@ -43,10 +42,9 @@ const Timetable = props => {
 							return (
 								<VerticalListItem>
 									<strong><NoSpaceP margin="0">
-										{/* classTime(yogaClass.startTime)} - {classTime(yogaClass.endTime)*/}
 										<Moment filter={removeEmptyMinutesFilter} format="h:mm" date={yogaClass.startTime} /> - <Moment filter={removeEmptyMinutesFilter} format="h:mma" date={yogaClass.endTime} />
 									</NoSpaceP></strong>
-									<NoSpaceP margin="0"><Link to="/classTypes/">{yogaClass.classLevel.longName} Class</Link></NoSpaceP>
+									<NoSpaceP margin="0"><Link to="/newStudents/">{yogaClass.classLevel.longName} class</Link></NoSpaceP>
 									<NoSpaceP margin="0"><Link to="/teachers/">Taught by {yogaClass.teacher.firstName}</Link></NoSpaceP>
 								</VerticalListItem>
 							)

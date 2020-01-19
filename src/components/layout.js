@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import { createGlobalStyle } from "styled-components"
-import { color, spacing } from "../styled-components/variables"
+import { color, spacing, device } from "../styled-components/variables"
 import { VerticalSpace } from '../styled-components/layout'
 import "typeface-open-sans"
 
@@ -34,6 +34,12 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 0.01em;
     line-height: 1.7em;
     margin: 0 0 1.2em 0;
+  }
+  h1, h2, h3, p {
+    text-align: center;
+    @media ${device.tablet} {
+      text-align: left;
+    }
   }
   h1 {
     font-size: 50px;
