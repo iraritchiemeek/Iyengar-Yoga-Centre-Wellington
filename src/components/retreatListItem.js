@@ -6,12 +6,6 @@ import { NoSpaceP } from "../styled-components/text"
 import Moment from 'react-moment'
 import moment from "moment"
 
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
-const renderDate = date => new Date(date).getDate()
-const renderMonth = date => monthNames[new Date(date).getMonth()]
-const renderYear = date => new Date(date).getFullYear()
-
 const RetreatListItem = props => {
   const { retreat } = props
   if (!retreat) return null
@@ -24,7 +18,11 @@ const RetreatListItem = props => {
         <Img style={{ height: '230px' }} fluid={retreat.node.mainPhoto.fluid} />
         <VerticalSpace space="1em" />
         <h2>{retreat.node.title}</h2>
-        <NoSpaceP>{renderDate(retreat.node.startDate)} - {renderDate(retreat.node.endDate)} {renderMonth(retreat.node.startDate)} {renderYear(retreat.node.startDate)}</NoSpaceP>
+
+        <NoSpaceP margin="0">
+          <Moment format="MMMM D" date={retreat.node.startDate} /> - <Moment format="MMMM D YYYY" date={retreat.node.endDate} />
+        </NoSpaceP>
+
         <VerticalSpace space="0.2em" />
         <Button><NoSpaceP>Read More</NoSpaceP></Button>
       </Link>
