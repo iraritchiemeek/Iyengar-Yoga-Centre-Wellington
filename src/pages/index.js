@@ -12,6 +12,8 @@ class Index extends React.Component {
   render() {
     const { data } = this.props
     const page = data.contentfulPage
+    const notices = data.allContentfulNotice
+    const slug = title => title.replace(/\s/g, '-').toLowerCase()
 
 
     return (
@@ -37,6 +39,34 @@ export default Index
 
 export const pageQuery = graphql`
   query {
+    allContentfulNotice {
+      edges {
+        node {
+          priority
+          retreat {
+            title
+            startDate
+            endDate
+            mainPhoto {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+          textContent {
+            title
+            image {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+            content {
+              json
+            }
+          }
+        }
+      }
+    }
     contentfulPage(contentful_id: {eq: "5Rmbm3BYGzBDz42G0IAW2z"}){
       title
       image {

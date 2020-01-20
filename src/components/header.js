@@ -11,7 +11,6 @@ const Header = ({ siteTitle, logo }) => (
         <Logo><Link to="//"><Img fluid={logo}>About</Img></Link></Logo>
         <NavItem><Link activeClassName="active" to="/timetable/">Timetable</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/newStudents/">New Students</Link></NavItem>
-        <NavItem><Link activeClassName="active" to="/retreats/">Notices</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/workshops/">Workshops</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/retreats/">Retreats</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/teachers/">Teachers</Link></NavItem>
