@@ -18,11 +18,9 @@ const RetreatListItem = props => {
         <Img style={{ height: '230px' }} fluid={retreat.node.mainPhoto.fluid} />
         <VerticalSpace space="1em" />
         <h2>{retreat.node.title}</h2>
-
-        <NoSpaceP margin="0">
+        <NoSpaceP>
           <Moment format="MMMM D" date={retreat.node.startDate} /> - <Moment format="MMMM D YYYY" date={retreat.node.endDate} />
         </NoSpaceP>
-
         <VerticalSpace space="0.2em" />
         <Button><NoSpaceP>Read More</NoSpaceP></Button>
       </Link>

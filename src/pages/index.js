@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 import { ContentContainer, VerticalSpace, InnerContainer } from "../styled-components/layout"
 import Quote from '../components/quote'
 import TripleTextColumn from "../components/tripleTextColumn"
+import {pageContentFragment, noticeContentFragment} from '../queries/queries'
 
 
 class Index extends React.Component {
@@ -42,55 +43,12 @@ export const pageQuery = graphql`
     allContentfulNotice {
       edges {
         node {
-          priority
-          retreat {
-            title
-            startDate
-            endDate
-            mainPhoto {
-              fluid {
-                ...GatsbyContentfulFluid
-              }
-            }
-          }
-          textContent {
-            title
-            image {
-              fluid {
-                ...GatsbyContentfulFluid
-              }
-            }
-            content {
-              json
-            }
-          }
+          ...NoticeContent
         }
       }
     }
     contentfulPage(contentful_id: {eq: "5Rmbm3BYGzBDz42G0IAW2z"}){
-      title
-      image {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      tripleTextColumns {
-        photos {
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-        title
-        content {
-          json
-        }
-      }
-      quote {
-        author
-        content {
-          content
-        }
-      }
+      ...PageContent
     }
   }
 `
