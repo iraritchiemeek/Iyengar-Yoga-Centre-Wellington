@@ -43,25 +43,27 @@ export const pageQuery = graphql`
       edges {
         node {
           priority
-          retreat {
-            title
-            startDate
-            endDate
-            mainPhoto {
-              fluid {
-                ...GatsbyContentfulFluid
+          content {
+            __typename ... on ContentfulRetreat {
+              title
+              startDate
+              endDate
+              mainPhoto {
+                fluid {
+                  ...GatsbyContentfulFluid
+                }
               }
             }
-          }
-          textContent {
-            title
-            image {
-              fluid {
-                ...GatsbyContentfulFluid
+            __typename ... on ContentfulSingleColumnText {
+              title
+              image {
+                fluid {
+                  ...GatsbyContentfulFluid
+                }
               }
-            }
-            content {
-              json
+              content {
+                json
+              }
             }
           }
         }

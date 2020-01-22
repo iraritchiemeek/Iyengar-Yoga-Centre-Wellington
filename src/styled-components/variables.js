@@ -1,6 +1,5 @@
 
 export const color = {
-	// lightBlue: `#6FCDE4`,
 	lightBlue: `#59C7DC`,
 	darkLightBlue: `#20AEC2`,
 	offBlack: `#1C1C1C`,
@@ -9,7 +8,7 @@ export const color = {
 }
 
 export const spacing = {
-	maxContentWidth: "1100px",
+	maxContentWidth: "1200px",
 	betweenItemSpace: 0.8
 }
 
