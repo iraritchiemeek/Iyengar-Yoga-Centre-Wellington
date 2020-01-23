@@ -26,7 +26,7 @@ class RetreatsPage extends React.Component {
           <FlexContainer>
             {retreats.map(retreat => {
               return (
-                <RetreatListItem retreat={retreat} />
+                <RetreatListItem retreat={retreat.node} />
               )
             })}
           </FlexContainer>

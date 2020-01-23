@@ -3,32 +3,58 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer, VerticalSpace, InnerContainer } from "../styled-components/layout"
+import { ContentContainer, VerticalSpace, InnerContainer, FlexContainer } from "../styled-components/layout"
 import Quote from '../components/quote'
 import TripleTextColumn from "../components/tripleTextColumn"
+import SingleTextColumn from "../components/singleTextColumn"
+import RetreatListItem from "../components/retreatListItem"
 
 
 class Index extends React.Component {
   render() {
     const { data } = this.props
     const page = data.contentfulPage
-    const notices = data.allContentfulNotice
+    const notices = data.allContentfulNotice.edges
     const slug = title => title.replace(/\s/g, '-').toLowerCase()
+
+    const renderTripleTextColumn = () => {
+      return (
+        page.tripleTextColumns.map(tripleTextColumn => {
+          return (
+            <TripleTextColumn content={tripleTextColumn.content} title={tripleTextColumn.title}></TripleTextColumn>
+          )
+        })
+      )
+    }
+
+    const renderNotices = () => {
+      return (
+        notices.map(notice => {
+          const noticeContent = notice.node.content
+          const notice_type = noticeContent.__typename
+          console.log(noticeContent)
+          if (notice_type == 'ContentfulSingleColumnText') {
+            return <SingleTextColumn image={noticeContent.image}  title={noticeContent.title} content={noticeContent.content.json} />
+          } else if (notice_type == 'ContentfulWorkshop') {
+            // Render workshop
+          } else if (notice_type === 'ContentfulRetreat') {
+            return <RetreatListItem retreat={noticeContent} /> 
+          }
+        })
+      )
+    }
 
 
     return (
       <Layout>
         <SEO title="Home" />
         <ContentContainer>
+          <FlexContainer>
+            {renderNotices()}
+          </FlexContainer>
           <VerticalSpace space="20px"/>
           <Quote author={page.quote.author} content={page.quote.content.content}/>
-          {
-            page.tripleTextColumns.map(tripleTextColumn => {
-              return (
-                <TripleTextColumn images={tripleTextColumn.photos} content={tripleTextColumn.content} title={tripleTextColumn.title}></TripleTextColumn>
-              )
-            })
-          }
+          {renderTripleTextColumn()}
         </ContentContainer>
       </Layout>
     )
@@ -54,6 +80,24 @@ export const pageQuery = graphql`
                 }
               }
             }
+            __typename ... on ContentfulWorkshop {
+              title
+              image {
+                fluid {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              startDate
+              endDate
+              description {
+                json
+              }
+              price
+              punchPassId
+              teacher {
+                name
+              }
+            }
             __typename ... on ContentfulSingleColumnText {
               title
               image {
@@ -77,11 +121,6 @@ export const pageQuery = graphql`
         }
       }
       tripleTextColumns {
-        photos {
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
         title
         content {
           json

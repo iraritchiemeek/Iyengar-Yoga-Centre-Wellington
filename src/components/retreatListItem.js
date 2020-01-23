@@ -14,12 +14,12 @@ const RetreatListItem = props => {
 
   return (
     <FlexItem>
-      <Link to={`/retreats/${slug(retreat.node.title)}`}>
-        <Img style={{ height: '230px' }} fluid={retreat.node.mainPhoto.fluid} />
+      <Link to={`/retreats/${slug(retreat.title)}`}>
+        <Img style={{ height: '230px' }} fluid={retreat.mainPhoto.fluid} />
         <VerticalSpace space="1em" />
-        <h2>{retreat.node.title}</h2>
+        <h2>{retreat.title}</h2>
         <NoSpaceP>
-          <Moment format="MMMM D" date={retreat.node.startDate} /> - <Moment format="MMMM D YYYY" date={retreat.node.endDate} />
+          <strong><Moment format="MMMM D" date={retreat.startDate} /> - <Moment format="MMMM D YYYY" date={retreat.endDate} /></strong>
         </NoSpaceP>
         <VerticalSpace space="0.2em" />
         <Button><NoSpaceP>Read More</NoSpaceP></Button>
