@@ -7,30 +7,30 @@ import Moment from 'react-moment'
 import moment from "moment"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-const RetreatListItem = props => {
-  const { retreat, title } = props
-  if (!retreat) return null
+const WorkshopListItem = props => {
+  const { workshop, title } = props
+  if (!workshop) return null
 
-  const retreatTitle = title || retreat.title
+  const workshopTitle = title || workshop.title
 
   const slug = title => title.replace(/\s/g, '-').toLowerCase()
 
   const renderDescription = () => {
-    if (!retreat.description) return null 
+    if (!workshop.description) return null 
 
     return (
-      documentToReactComponents(retreat.description.json)
+      documentToReactComponents(workshop.description.json)
     )
   }
 
   return (
     <FlexItem>
-      <Link to={`/retreats/${slug(retreat.title)}`}>
-        <Img style={{ height: '230px' }} fluid={retreat.mainPhoto.fluid} />
+      <Link to={`/workshops/${slug(workshop.title)}`}>
+        <Img style={{ height: '230px' }} fluid={workshop.image.fluid} />
         <VerticalSpace space="1em" />
-        <h2>{retreatTitle}</h2>
+        <h2>{workshopTitle}</h2>
         <p>
-          <strong><Moment format="MMMM D" date={retreat.startDate} /> - <Moment format="MMMM D YYYY" date={retreat.endDate} /></strong>
+          <strong><Moment format="dddd D MMM" date={workshop.startDate} /> - <Moment format="dddd D MMM" date={workshop.endDate} /></strong>
         </p>
         <VerticalSpace space="0.2em" />
         {renderDescription()}
@@ -40,4 +40,4 @@ const RetreatListItem = props => {
   )
 }
 
-export default RetreatListItem
+export default WorkshopListItem

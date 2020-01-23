@@ -8,6 +8,7 @@ import Quote from '../components/quote'
 import TripleTextColumn from "../components/tripleTextColumn"
 import SingleTextColumn from "../components/singleTextColumn"
 import RetreatListItem from "../components/retreatListItem"
+import WorkshopListItem from "../components/workshopListItem"
 
 
 class Index extends React.Component {
@@ -34,11 +35,11 @@ class Index extends React.Component {
           const notice_type = noticeContent.__typename
           console.log(noticeContent)
           if (notice_type == 'ContentfulSingleColumnText') {
-            return <SingleTextColumn image={noticeContent.image}  title={noticeContent.title} content={noticeContent.content.json} />
+            return <SingleTextColumn image={noticeContent.image}  title={notice.node.title} content={noticeContent.content.json} />
           } else if (notice_type == 'ContentfulWorkshop') {
-            // Render workshop
+            return <WorkshopListItem workshop={noticeContent} title={notice.node.title} /> 
           } else if (notice_type === 'ContentfulRetreat') {
-            return <RetreatListItem retreat={noticeContent} /> 
+            return <RetreatListItem retreat={noticeContent} title={notice.node.title} /> 
           }
         })
       )
@@ -49,11 +50,11 @@ class Index extends React.Component {
       <Layout>
         <SEO title="Home" />
         <ContentContainer>
+            <Quote author={page.quote.author} content={page.quote.content.content}/>
+          <VerticalSpace space="15px"/>
           <FlexContainer>
             {renderNotices()}
           </FlexContainer>
-          <VerticalSpace space="20px"/>
-          <Quote author={page.quote.author} content={page.quote.content.content}/>
           {renderTripleTextColumn()}
         </ContentContainer>
       </Layout>
@@ -68,10 +69,14 @@ export const pageQuery = graphql`
     allContentfulNotice {
       edges {
         node {
+          title
           priority
           content {
             __typename ... on ContentfulRetreat {
               title
+              description {
+                json
+              }
               startDate
               endDate
               mainPhoto {
