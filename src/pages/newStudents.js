@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { ContentContainer, FlexContainer, InnerContainer } from "../styled-components/layout"
+import { ContentContainer, FlexContainer, InnerContainer, VerticalSpace } from "../styled-components/layout"
 import Quote from "../components/quote"
 import SingleTextColumn from '../components/singleTextColumn'
 import TripleTextColumn from "../components/tripleTextColumn"
@@ -16,12 +16,12 @@ class newStudentsPage extends React.Component {
     const classTypes = data.allContentfulClassType.edges
     const page = data.contentfulPage
 
-    console.log(data)
-
     return (
       <Layout>
         <SEO title="Class Types" />
         <ContentContainer>
+          <Quote content={page.quote.content.content}/>
+          <VerticalSpace space="15px"/>
           <InnerContainer>
             <h1>New Students</h1>
           </InnerContainer>
@@ -52,6 +52,11 @@ export const pageQuery = graphql`
     
     contentfulPage(contentful_id: {eq: "24GOqYDwtQVqrMCVAZrzfS"}){
       title
+      quote {
+        content {
+          content
+        }
+      }
       tripleTextColumns {
         content {
           json

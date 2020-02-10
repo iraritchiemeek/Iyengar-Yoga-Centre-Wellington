@@ -50,7 +50,7 @@ class Index extends React.Component {
       <Layout>
         <SEO title="Home" />
         <ContentContainer>
-            <Quote author={page.quote.author} content={page.quote.content.content}/>
+          <Quote author={page.quote.author} content={page.quote.content.content}/>
           <VerticalSpace space="15px"/>
           <FlexContainer>
             {renderNotices()}
