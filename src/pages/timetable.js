@@ -6,8 +6,6 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { FlexContainer, FlexItem, ContentContainer, InnerContainer } from "../styled-components/layout"
 
-
-
 class TimetablePage extends React.Component {
   render() {
     const { data } = this.props

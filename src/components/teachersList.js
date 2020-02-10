@@ -9,34 +9,14 @@ const TeachersList = props => {
 
 	const renderTeacher = teacher => {
 		teacher = teacher.node
-		if (teacher.order == 1) {
-			return (
-				<React.Fragment>
-					<FlexItem>
-						<Img fluid={teacher.image.fluid} />
-					</FlexItem>
-					<FlexItem>
-						<Img fluid={teacher.image.fluid} />
-					</FlexItem>
-					<FlexItem>
-						<Img fluid={teacher.image.fluid} />
-					</FlexItem>
-					<FlexItem fullWidth >
-						<h2>{teacher.name}</h2>
-						<TripleColumnText>{documentToReactComponents(teacher.description.json)}</TripleColumnText>
-					</FlexItem>
-				</React.Fragment>
-			)
-		} else {
-			return (
-				<FlexItem>
-					<Img fluid={teacher.image.fluid} />
-					<VerticalSpace/>
-					<h2>{teacher.name}</h2>
-					{documentToReactComponents(teacher.description.json)}
-				</FlexItem>
-			)
-		}
+		return (
+			<FlexItem>
+				<Img fluid={teacher.image.fluid} />
+				<VerticalSpace/>
+				<h2>{teacher.name}</h2>
+				{documentToReactComponents(teacher.description.json)}
+			</FlexItem>
+		)
 	}
 
 	
