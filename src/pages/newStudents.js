@@ -15,6 +15,8 @@ class newStudentsPage extends React.Component {
     const { data } = this.props
     const classTypes = data.allContentfulClassType.edges
     const page = data.contentfulPage
+    const newStudentText = page.tripleTextColumns[0]
+    const begginerCourseText = page.tripleTextColumns[1]
 
     return (
       <Layout>
@@ -26,19 +28,21 @@ class newStudentsPage extends React.Component {
             <h1>New Students</h1>
           </InnerContainer>
           <FlexContainer>
-            {
-              page.tripleTextColumns.map(tripleTextColumn => {
-                return (
-                  <TripleTextColumn content={tripleTextColumn.content} ></TripleTextColumn>
-                )
-              })
-            }
+            <TripleTextColumn content={newStudentText.content} ></TripleTextColumn>
             {classTypes.map(classType => {
               return (
                 <SingleTextColumn title={classType.node.longName} content={classType.node.description.json} />
               )
             })}
           </FlexContainer>
+          <VerticalSpace space="15px"/>
+          <InnerContainer>
+            <h1>Begginer Courses</h1>
+          </InnerContainer>
+          <FlexContainer>
+            <TripleTextColumn content={begginerCourseText.content} ></TripleTextColumn>
+          </FlexContainer>
+
         </ContentContainer>
       </Layout>
     )
@@ -49,7 +53,6 @@ export default newStudentsPage
 
 export const pageQuery = graphql`
   query {
-    
     contentfulPage(contentful_id: {eq: "24GOqYDwtQVqrMCVAZrzfS"}){
       title
       quote {

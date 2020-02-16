@@ -15,22 +15,8 @@ class ContactPage extends React.Component {
         <ContentContainer>
           <InnerContainer>
             <h1>Contact</h1>
+            <a href="mailto: tessa@wellingtonyoga.co.nz"><h2>tessa@wellingtonyoga.co.nz</h2></a>
           </InnerContainer>
-          <form action="https://getform.io/f/b0a84408-a83e-4362-a9f2-885a154555f5" method="POST">
-            <label>
-              Email
-              <input type="email" name="email" />
-            </label>
-            <label>
-              Name
-              <input type="text" name="name" />
-            </label>
-            <label>
-              Message
-              <input type="text" name="message" />
-            </label>
-            <button type="submit">Send</button>
-          </form>  
         </ContentContainer>
       </Layout>
     )
