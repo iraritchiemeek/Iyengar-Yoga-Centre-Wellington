@@ -33,7 +33,6 @@ class Index extends React.Component {
         notices.map(notice => {
           const noticeContent = notice.node.content
           const notice_type = noticeContent.__typename
-          console.log(noticeContent)
           if (notice_type == 'ContentfulSingleColumnText') {
             return <SingleTextColumn image={noticeContent.image}  title={notice.node.title} content={noticeContent.content.json} />
           } else if (notice_type == 'ContentfulWorkshop') {

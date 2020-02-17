@@ -81,9 +81,6 @@ export const FlexItem = styled.div`
 		padding: 1.1em ${spacing.betweenItemSpace}em;
 		box-sizing: border-box;
 	}
-	h2 {
-		color: ${color.lightBlue};
-	}
 `
 
 const calcNthChild = width => Math.round(100 / parseFloat(width))

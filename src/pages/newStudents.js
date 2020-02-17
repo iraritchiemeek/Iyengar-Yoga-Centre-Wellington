@@ -17,16 +17,18 @@ class newStudentsPage extends React.Component {
     const page = data.contentfulPage
     const newStudentText = page.tripleTextColumns[0]
     const begginerCourseText = page.tripleTextColumns[1]
+    const bannerImage = data.bannerImage
 
     return (
       <Layout>
         <SEO title="Class Types" />
         <ContentContainer>
-          <Quote content={page.quote.content.content}/>
-          <VerticalSpace space="15px"/>
           <InnerContainer>
             <h1>New Students</h1>
+            <VerticalSpace space="30px"/>
+            <Img fluid={bannerImage.fluid} />
           </InnerContainer>
+
           <FlexContainer>
             <TripleTextColumn content={newStudentText.content} ></TripleTextColumn>
             {classTypes.map(classType => {
@@ -53,6 +55,11 @@ export default newStudentsPage
 
 export const pageQuery = graphql`
   query {
+    bannerImage: contentfulAsset(contentful_id: {eq: "26HV1n2gSuUcwOB499SjcV"}) {
+      fluid {
+        ...GatsbyContentfulFluid
+      }
+    }
     contentfulPage(contentful_id: {eq: "24GOqYDwtQVqrMCVAZrzfS"}){
       title
       quote {

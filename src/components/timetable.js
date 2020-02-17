@@ -42,10 +42,10 @@ const Timetable = props => {
 							return (
 								<VerticalListItem>
 									<strong><NoSpaceP margin="0">
-										<Moment filter={removeEmptyMinutesFilter} format="h:mm" date={yogaClass.startTime} /> - <Moment filter={removeEmptyMinutesFilter} format="h:mma" date={yogaClass.endTime} />
+										<Moment filter={removeEmptyMinutesFilter} format="h:mm" date={yogaClass.startTime} />-<Moment filter={removeEmptyMinutesFilter} format="h:mma" date={yogaClass.endTime} />
 									</NoSpaceP></strong>
-									<NoSpaceP margin="0"><Link to="/newStudents/">{yogaClass.classLevel.longName} class</Link></NoSpaceP>
-									<NoSpaceP margin="0"><Link to="/teachers/">Taught by {yogaClass.teacher.firstName}</Link></NoSpaceP>
+									<NoSpaceP margin="0"><Link to="/newStudents/">{yogaClass.classLevel.longName}</Link></NoSpaceP>
+									<NoSpaceP margin="0"><Link to="/teachers/">{yogaClass.teacher.firstName}</Link></NoSpaceP>
 								</VerticalListItem>
 							)
 						}))}

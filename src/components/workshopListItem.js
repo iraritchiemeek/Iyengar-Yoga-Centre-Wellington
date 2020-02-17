@@ -30,9 +30,8 @@ const WorkshopListItem = props => {
         <VerticalSpace space="1em" />
         <h2>{workshopTitle}</h2>
         <p>
-          <strong><Moment format="dddd D MMM" date={workshop.startDate} /> - <Moment format="dddd D MMM" date={workshop.endDate} /></strong>
+          <Moment format="dddd D MMM" date={workshop.startDate} /> - <Moment format="dddd D MMM" date={workshop.endDate} />
         </p>
-        <VerticalSpace space="0.2em" />
         {renderDescription()}
         <Button><NoSpaceP>Read More</NoSpaceP></Button>
       </Link>

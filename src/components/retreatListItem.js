@@ -30,9 +30,8 @@ const RetreatListItem = props => {
         <VerticalSpace space="1em" />
         <h2>{retreatTitle}</h2>
         <p>
-          <strong><Moment format="MMMM D" date={retreat.startDate} /> - <Moment format="MMMM D YYYY" date={retreat.endDate} /></strong>
+          <Moment format="MMMM D" date={retreat.startDate} /> - <Moment format="MMMM D YYYY" date={retreat.endDate} />
         </p>
-        <VerticalSpace space="0.2em" />
         {renderDescription()}
         <Button><NoSpaceP>Read More</NoSpaceP></Button>
       </Link>

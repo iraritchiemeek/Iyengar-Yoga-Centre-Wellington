@@ -6,13 +6,14 @@ import { createGlobalStyle } from "styled-components"
 import { color, spacing, device } from "../styled-components/variables"
 import { VerticalSpace } from '../styled-components/layout'
 import "typeface-open-sans"
+import "typeface-muli"
 
 const GlobalStyle = createGlobalStyle`
   body, html {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Muli', sans-serif;
     font-weight: 300;
     max-width: 100%;
     box-sizing: border-box;
@@ -29,29 +30,29 @@ const GlobalStyle = createGlobalStyle`
     color: ${color.lightBlue};
   }
   p {
-    color: ${color.offBlack};
-    font-size: 13px;
+    font-size: 20px;
     letter-spacing: 0.01em;
-    line-height: 1.7em;
     margin: 0 0 1.2em 0;
   }
   h1, h2, h3, p {
     text-align: center;
+    color: ${color.offBlack};
+    line-height: 32px;
     @media ${device.tablet} {
       text-align: left;
     }
   }
   h1 {
-    font-size: 50px;
-    font-weight: bold;
-    color: ${color.lightBlue};
+    font-size: 58px;
+    font-weight: 300;
     margin: 0;
+    color: ${color.lightBlue};
   }
   h2 {
     font-size: 25px;
     margin: 0 0 0 0;
-    color: ${color.lightBlue};
-    font-weight: 300;
+    font-weight: 400;
+    margin-bottom: 25px;
   }
   h3 {
     font-size: 18px;
