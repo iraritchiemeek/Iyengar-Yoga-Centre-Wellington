@@ -54,7 +54,6 @@ class Index extends React.Component {
             <Img fluid={bannerImage.fluid} />
           </InnerContainer>
           <Quote author={page.quote.author} content={page.quote.content.content}/>
-          <VerticalSpace space="15px"/>
           <FlexContainer>
             {renderNotices()}
           </FlexContainer>
