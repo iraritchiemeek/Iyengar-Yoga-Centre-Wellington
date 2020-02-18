@@ -30,7 +30,7 @@ class TimetablePage extends React.Component {
   }
 }
 
-export default TimetablePage
+export default TimetablePage 
 
 export const pageQuery = graphql`
   query {
