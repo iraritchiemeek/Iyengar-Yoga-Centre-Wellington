@@ -20,7 +20,7 @@ class RetreatsPage extends React.Component {
         <SEO title="Class Types" />
         <ContentContainer>
           <InnerContainer>
-            <h1>Upcoming Retreats</h1>
+            <h1>Yoga Retreats</h1>
           </InnerContainer>
           <VerticalSpace space="15px" />
           <FlexContainer>

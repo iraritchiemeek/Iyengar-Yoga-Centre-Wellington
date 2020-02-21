@@ -28,6 +28,13 @@ class newStudentsPage extends React.Component {
             <VerticalSpace space="30px"/>
             <Img fluid={bannerImage.fluid} />
           </InnerContainer>
+          <VerticalSpace space="15px"/>
+          <InnerContainer>
+            <h2>Begginer Courses</h2>
+          </InnerContainer>
+          <FlexContainer>
+            <TripleTextColumn content={begginerCourseText.content} ></TripleTextColumn>
+          </FlexContainer>
 
           <FlexContainer>
             <TripleTextColumn content={newStudentText.content} ></TripleTextColumn>
@@ -37,14 +44,6 @@ class newStudentsPage extends React.Component {
               )
             })}
           </FlexContainer>
-          <VerticalSpace space="15px"/>
-          <InnerContainer>
-            <h1>Begginer Courses</h1>
-          </InnerContainer>
-          <FlexContainer>
-            <TripleTextColumn content={begginerCourseText.content} ></TripleTextColumn>
-          </FlexContainer>
-
         </ContentContainer>
       </Layout>
     )
