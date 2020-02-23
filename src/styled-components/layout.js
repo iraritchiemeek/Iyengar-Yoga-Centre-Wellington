@@ -5,25 +5,24 @@ export const NavList = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	display: flex;
 	flex-wrap: wrap;
+	display: ${props => props.hidden ? `hidden` : `flex`};
 `
 
 export const StyledHeader = styled.header`
-	@media ${device.tablet} {
-		padding: 0 30px;
-		nav {
-			max-width: ${spacing.maxContentWidth};
-		}
-	}
-	padding: 0 15px;
+	padding: .8em 2em;
 	box-sizing: border-box;
-	box-shadow: inset 0 -1px 0 0px rgba(0, 0, 0, 0.1);
-	nav {
-		padding: 8px 0;
-		margin: 0 auto;
-		max-width: 100%;
+	margin: 0 auto;
+	max-width: 100%;
+	position: fixed;
+	width: 100%;
+	background-color: white;
+	z-index: 2;
+	height: 70px;
+	@media ${device.laptop} {
+		background-color: rgba(0,0,0,0);
 	}
+
 `
 
 export const NavItem = styled.li`
@@ -52,18 +51,18 @@ export const InnerContainer = styled.div`
 
 export const Logo = styled.div`
 	cursor: pointer;
-	padding: .8em;
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 40px;
 	margin-right: ${spacing.betweenItemSpace}em;
 
 `
 
 export const ContentContainer = styled.section`
-	@media ${device.tablet} {
-		padding: 2em 0;
+	@media ${device.laptopL} {
+		padding-top: .8em;
 	}
 	padding: 1em;
+	padding-top: 70px;
 	max-width: ${spacing.maxContentWidth};
     margin: auto;
     box-sizing: border-box;
