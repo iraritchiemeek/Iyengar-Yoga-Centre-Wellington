@@ -18,6 +18,12 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     box-sizing: border-box;
   } 
+  main {
+    z-index: 0;
+  }
+  header {
+    z-index: 1;
+  }
   a {
     color: black;
     text-decoration: none;

@@ -6,7 +6,15 @@ export const NavList = styled.ul`
 	margin: 0;
 	padding: 0;
 	flex-wrap: wrap;
-	display: ${props => props.hidden ? `hidden` : `flex`};
+	background-color: white;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: ${props => props.open ? `block` : `none`};
+	padding-top: 70px;
+	z-index: 1;
 `
 
 export const StyledHeader = styled.header`
@@ -17,12 +25,10 @@ export const StyledHeader = styled.header`
 	position: fixed;
 	width: 100%;
 	background-color: white;
-	z-index: 2;
 	height: 70px;
 	@media ${device.laptop} {
 		background-color: rgba(0,0,0,0);
 	}
-
 `
 
 export const NavItem = styled.li`
@@ -33,8 +39,9 @@ export const NavItem = styled.li`
 	padding: .8em;
 	text-align: center;
 	a, a:visited, a:active {
-		font-size: 16px;
-		color: ${color.lightGrey};
+		font-size: 30px;
+		font-weight: bold;
+		color: ${color.lightBlue};
 		text-decoration: none;
 	}
 	a:hover {
@@ -54,7 +61,73 @@ export const Logo = styled.div`
 	width: 30px;
 	height: 40px;
 	margin-right: ${spacing.betweenItemSpace}em;
+	float: left;
+	z-index: 2;
+	position: relative;
+`
 
+export const Hamburger = styled.div`
+	z-index: 2;
+	position: relative;
+	font: inherit;
+    display: inline-block;
+    overflow: visible;
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: .15s;
+    transition-property: opacity,filter;
+    text-transform: none;
+    color: inherit;
+    border: 0;
+    background-color: transparent;
+    float: right;
+    &:hover {
+    	opacity: .7;
+    }
+`
+
+export const HamburgerBox = styled.div`
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 24px;
+`
+
+export const HamburgerInner = styled.div`
+	position: absolute;
+	width: 40px;
+	height: 4px;
+	transition-timing-function: ease;
+	transition-duration: .15s;
+	transition-property: transform;
+	border-radius: 4px;
+	background-color: ${color.lightBlue};
+	&:before {
+		transition: bottom .08s ease-out 0s,top .08s ease-out 0s,opacity 0s linear;
+		display: block;
+	    content: "";
+	    position: absolute;
+	    width: 40px;
+	    height: 4px;
+	    border-radius: 4px;
+	    background-color: ${color.lightBlue};
+	    opacity: ${props => props.open ? `0` : `1`};
+	    top: ${props => props.open? `0` : `-10px`};
+	}
+	&:after {
+		transition: bottom .08s ease-out 0s,top .08s ease-out 0s,opacity 0s linear;
+		bottom: ${props => props.open? `0` : `-10px`};
+		display: block;
+	    content: "";
+	    position: absolute;
+	    width: 40px;
+	    height: 4px;
+	    border-radius: 4px;
+	    background-color: ${color.lightBlue};
+	    opacity: ${props => props.open ? `0` : `1`};
+	}
 `
 
 export const ContentContainer = styled.section`
@@ -66,6 +139,7 @@ export const ContentContainer = styled.section`
 	max-width: ${spacing.maxContentWidth};
     margin: auto;
     box-sizing: border-box;
+    z-index: 0;
 `
 
 export const FlexContainer = styled.div`
