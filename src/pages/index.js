@@ -51,6 +51,8 @@ class Index extends React.Component {
         <SEO title="Home" />
         <ContentContainer>
           <InnerContainer>
+            <h1>The Iyengar Yoga Center of Wellington</h1>
+            <VerticalSpace space="30px"/>
             <Img fluid={bannerImage.fluid} />
           </InnerContainer>
           <Quote author={page.quote.author} content={page.quote.content.content}/>

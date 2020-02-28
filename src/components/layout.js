@@ -13,10 +13,11 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     margin: 0;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     max-width: 100%;
     box-sizing: border-box;
+    padding-top: .8em;
   } 
   main {
     z-index: 0;
@@ -43,7 +44,6 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, p {
     text-align: center;
     color: ${color.offBlack};
-    line-height: 32px;
     @media ${device.tablet} {
       text-align: left;
     }

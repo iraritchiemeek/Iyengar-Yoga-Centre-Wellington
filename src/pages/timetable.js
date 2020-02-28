@@ -61,6 +61,7 @@ export const pageQuery = graphql`
           }
           classLevel {
             longName
+            shortName
           }
         }
       }

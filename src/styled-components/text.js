@@ -14,9 +14,11 @@ export const QuoteText = styled(NoSpaceP)`
     font-size: 20px;
     color: ${color.darkGrey};
     padding: 0 ${spacing.betweenItemSpace}em;
+    text-align: center;
 `
 
 export const QuoteAuthor = styled(NoSpaceP)`
+	text-align: center;
 	font-style: italic;
     padding: 0 ${spacing.betweenItemSpace}em;
 `

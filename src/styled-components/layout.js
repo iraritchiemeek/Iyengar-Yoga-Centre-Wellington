@@ -18,7 +18,7 @@ export const NavList = styled.ul`
 `
 
 export const StyledHeader = styled.header`
-	padding: .8em 2em;
+	padding: 0 2em .8em 2em;
 	box-sizing: border-box;
 	margin: 0 auto;
 	max-width: 100%;
@@ -42,13 +42,10 @@ export const NavItem = styled.li`
 		font-size: 30px;
 		font-weight: bold;
 		color: ${color.lightBlue};
-		text-decoration: none;
+		
 	}
-	a:hover {
-		color: black;
-	}
-	a.active {
-		color: black;
+	a:hover, a.active {
+		text-decoration: underline;
 	}
 `
 
@@ -58,8 +55,8 @@ export const InnerContainer = styled.div`
 
 export const Logo = styled.div`
 	cursor: pointer;
-	width: 30px;
-	height: 40px;
+	width: 40px;
+	height: 50px;
 	margin-right: ${spacing.betweenItemSpace}em;
 	float: left;
 	z-index: 2;
@@ -73,7 +70,6 @@ export const Hamburger = styled.div`
     display: inline-block;
     overflow: visible;
     margin: 0;
-    padding: 15px;
     cursor: pointer;
     transition-timing-function: linear;
     transition-duration: .15s;
@@ -91,39 +87,39 @@ export const Hamburger = styled.div`
 export const HamburgerBox = styled.div`
 	position: relative;
 	display: inline-block;
-	width: 40px;
-	height: 24px;
+	width: 50px;
+	height: 36px;
 `
 
 export const HamburgerInner = styled.div`
 	position: absolute;
-	width: 40px;
-	height: 4px;
+	width: 50px;
+	height: 5px;
 	transition-timing-function: ease;
 	transition-duration: .15s;
 	transition-property: transform;
 	border-radius: 4px;
 	background-color: ${color.lightBlue};
 	&:before {
-		transition: bottom .08s ease-out 0s,top .08s ease-out 0s,opacity 0s linear;
+		transition: top .08s ease-out 0s,opacity 0s linear;
 		display: block;
 	    content: "";
 	    position: absolute;
-	    width: 40px;
-	    height: 4px;
+	    width: 50px;
+	    height: 5px;
 	    border-radius: 4px;
 	    background-color: ${color.lightBlue};
 	    opacity: ${props => props.open ? `0` : `1`};
-	    top: ${props => props.open? `0` : `-10px`};
+	    top: ${props => props.open? `0` : `10px`};
 	}
 	&:after {
-		transition: bottom .08s ease-out 0s,top .08s ease-out 0s,opacity 0s linear;
-		bottom: ${props => props.open? `0` : `-10px`};
+		transition: top .08s ease-out 0s,opacity 0s linear;
+		top: ${props => props.open? `0` : `20px`};
 		display: block;
 	    content: "";
 	    position: absolute;
-	    width: 40px;
-	    height: 4px;
+	    width: 50px;
+	    height: 5px;
 	    border-radius: 4px;
 	    background-color: ${color.lightBlue};
 	    opacity: ${props => props.open ? `0` : `1`};
