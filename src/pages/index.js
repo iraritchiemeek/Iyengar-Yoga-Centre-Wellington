@@ -17,17 +17,7 @@ class Index extends React.Component {
     const page = data.contentfulPage
     const notices = data.allContentfulNotice.edges
     const slug = title => title.replace(/\s/g, '-').toLowerCase()
-    const bannerImage = data.bannerImage
-
-    const renderTripleTextColumn = () => {
-      return (
-        page.tripleTextColumns.map(tripleTextColumn => {
-          return (
-            <TripleTextColumn content={tripleTextColumn.content} title={tripleTextColumn.title}></TripleTextColumn>
-          )
-        })
-      )
-    }
+    const bannerImage = page.image
 
     const renderNotices = () => {
       return (
@@ -59,7 +49,6 @@ class Index extends React.Component {
           <FlexContainer>
             {renderNotices()}
           </FlexContainer>
-          {renderTripleTextColumn()}
         </ContentContainer>
       </Layout>
     )
@@ -70,11 +59,6 @@ export default Index
 
 export const pageQuery = graphql`
   query {
-    bannerImage: contentfulAsset(contentful_id: {eq: "5W49VGeGe5jikF6upwrTpx"}) {
-      fluid {
-        ...GatsbyContentfulFluid
-      }
-    }
     allContentfulNotice {
       edges {
         node {
