@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     z-index: 1;
   }
   a {
-    color: black;
+    color: ${color.lightBlue};
     text-decoration: none;
     transition: color 0.1s ease-out;
   }
@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
     color: default;
   }
   a:hover {
-    color: ${color.lightBlue};
+    text-decoration: none;
   }
   p {
     font-size: 20px;

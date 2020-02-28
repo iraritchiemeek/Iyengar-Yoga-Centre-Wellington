@@ -9,20 +9,25 @@ import TripleTextColumn from "../components/tripleTextColumn"
 import SingleTextColumn from "../components/singleTextColumn"
 
 
-class About extends React.Component {
+class ClassLevels extends React.Component {
   render() {
     const { data } = this.props
     const page = data.contentfulPage
+    const classTypes = data.allContentfulClassType.edges
 
     const renderTripleTextColumn = () => {
-      return (
-        page.tripleTextColumns.map(tripleTextColumn => {
-          return (
-            <TripleTextColumn content={tripleTextColumn.content} title={tripleTextColumn.title}></TripleTextColumn>
-          )
-        })
-      )
+      if (page.tripleTextColumns) {
+        return (
+          page.tripleTextColumns.map(tripleTextColumn => {
+            return (
+              <TripleTextColumn content={tripleTextColumn.content} title={tripleTextColumn.title}></TripleTextColumn>
+            )
+          })
+        )
+      }
     }
+
+    const renderQuote = () => page.quote ? <Quote author={page.quote.author} content={page.quote.content.content}/> : null
 
     return (
       <Layout>
@@ -33,19 +38,42 @@ class About extends React.Component {
             <VerticalSpace space="30px"/>
             <Img fluid={page.image.fluid} />
           </InnerContainer>
-          <Quote author={page.quote.author} content={page.quote.content.content}/>
+          {renderQuote()}
           {renderTripleTextColumn()}
+          <FlexContainer>
+            {classTypes.map(classType => {
+              return (
+                <SingleTextColumn title={classType.node.longName} content={classType.node.description.json} />
+              )
+            })}
+          </FlexContainer>
         </ContentContainer>
       </Layout>
     )
   }
 }
 
-export default About
+export default ClassLevels
 
 export const pageQuery = graphql`
   query {
-    contentfulPage(contentful_id: {eq: "3CVGZB1c7gS08gBRNa9P6d"}){
+    allContentfulClassType(
+      sort: {
+        fields: [order]
+        order: ASC
+      }
+    ){
+      edges {
+        node {
+          longName
+          shortName
+          description {
+            json
+          }
+        }
+      }
+    }
+    contentfulPage(contentful_id: {eq: "2YqZrgz26PjdcOOYFP39Cu"}){
       title
       image {
         fluid {

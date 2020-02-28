@@ -14,6 +14,7 @@ function Header({ siteTitle, logo }) {
       <NavList open={hamburgerOpen}>
         <NavItem><Link activeClassName="active" to="/about/">About</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/timetable/">Timetable</Link></NavItem>
+        <NavItem><Link activeClassName="active" to="/classLevels/">Class Levels</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/newStudents/">New Students</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/retreats/">Retreats</Link></NavItem>
         <NavItem><Link activeClassName="active" to="/teachers/">Teachers</Link></NavItem>

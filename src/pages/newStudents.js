@@ -13,7 +13,6 @@ import TripleTextColumn from "../components/tripleTextColumn"
 class newStudentsPage extends React.Component {
   render() {
     const { data } = this.props
-    const classTypes = data.allContentfulClassType.edges
     const page = data.contentfulPage
     const newStudentText = page.tripleTextColumns[0]
     const begginerCourseText = page.tripleTextColumns[1]
@@ -34,15 +33,7 @@ class newStudentsPage extends React.Component {
           </InnerContainer>
           <FlexContainer>
             <TripleTextColumn content={begginerCourseText.content} ></TripleTextColumn>
-          </FlexContainer>
-
-          <FlexContainer>
             <TripleTextColumn content={newStudentText.content} ></TripleTextColumn>
-            {classTypes.map(classType => {
-              return (
-                <SingleTextColumn title={classType.node.longName} content={classType.node.description.json} />
-              )
-            })}
           </FlexContainer>
         </ContentContainer>
       </Layout>
@@ -69,23 +60,6 @@ export const pageQuery = graphql`
       tripleTextColumns {
         content {
           json
-        }
-      }
-    }
-
-    allContentfulClassType(
-      sort: {
-        fields: [order]
-        order: ASC
-      }
-    ){
-      edges {
-        node {
-          longName
-          shortName
-          description {
-            json
-          }
         }
       }
     }
