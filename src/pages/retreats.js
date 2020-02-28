@@ -40,7 +40,12 @@ export default RetreatsPage
 
 export const pageQuery = graphql`
   query {
-    allContentfulRetreat {
+    allContentfulRetreat(
+      sort: {
+        fields: [order]
+        order: ASC
+      }
+    ) {
       edges {
         node {
           startDate
