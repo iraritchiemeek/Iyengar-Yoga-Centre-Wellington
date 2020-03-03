@@ -28,12 +28,9 @@ class newStudentsPage extends React.Component {
             <Img fluid={bannerImage.fluid} />
           </InnerContainer>
           <VerticalSpace space="15px"/>
-          <InnerContainer>
-            <h2>Begginer Courses</h2>
-          </InnerContainer>
           <FlexContainer>
-            <TripleTextColumn content={begginerCourseText.content} ></TripleTextColumn>
-            <TripleTextColumn content={newStudentText.content} ></TripleTextColumn>
+            <TripleTextColumn content={[begginerCourseText.column1, begginerCourseText.column2, begginerCourseText.column3]} title={begginerCourseText.title} ></TripleTextColumn>
+            <TripleTextColumn content={[newStudentText.column1, newStudentText.column2, newStudentText.column3]} title={newStudentText.title} ></TripleTextColumn>
           </FlexContainer>
         </ContentContainer>
       </Layout>
@@ -58,7 +55,17 @@ export const pageQuery = graphql`
         }
       }
       tripleTextColumns {
+        title
         content {
+          json
+        }
+        column1 {
+          json
+        }
+        column2 {
+          json
+        }
+        column3 {
           json
         }
       }

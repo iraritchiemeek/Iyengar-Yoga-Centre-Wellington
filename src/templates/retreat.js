@@ -37,7 +37,7 @@ class Retreat extends React.Component {
     const renderTripleTextColumns = retreat => {
       if (!retreat.tripleTextColumns) return null
       return (
-        retreat.tripleTextColumns.map(column => <TripleTextColumn content={column.content} title={column.title} /> )
+        retreat.tripleTextColumns.map(column => <TripleTextColumn content={[column.column1, column.column2, column.column3]} title={column.title} /> )
       )
     }
 
@@ -56,9 +56,11 @@ class Retreat extends React.Component {
       <Layout>
         <SEO title="Retreat" />
         <ContentContainer>
-          {renderPhotos(retreat)}
           <InnerContainer>
             <h1>{retreat.title}</h1>
+          </InnerContainer>
+          {renderPhotos(retreat)}
+          <InnerContainer>
             <h2>{startDate} {startMonth} - {endDate} {endMonth} {year}</h2>
           </InnerContainer>
           <FlexContainer>
@@ -103,6 +105,15 @@ export const pageQuery = graphql`
       tripleTextColumns {
         title
         content {
+          json
+        }
+        column1 {
+          json
+        }
+        column2 {
+          json
+        }
+        column3 {
           json
         }
       }

@@ -5,7 +5,6 @@ import PricesList from "../components/pricesList"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { ContentContainer, VerticalSpace, FlexContainer, InnerContainer } from "../styled-components/layout"
-import TripleImage from '../components/tripleImage'
 import Quote from '../components/quote'
 import SingleTextColumn from '../components/singleTextColumn'
 

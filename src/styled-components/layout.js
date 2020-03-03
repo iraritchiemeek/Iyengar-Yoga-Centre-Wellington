@@ -18,7 +18,7 @@ export const NavList = styled.ul`
 `
 
 export const StyledHeader = styled.header`
-	@media ${device.laptop} {
+	@media ${device.laptopL} {
 		background-color: initial;
 		padding: .8em 2em .8em 2em;
 	}
@@ -128,7 +128,7 @@ export const HamburgerInner = styled.div`
 `
 
 export const ContentContainer = styled.section`
-	@media ${device.laptop} {
+	@media ${device.laptopL} {
 		padding: .8em 1em 1em 1em;
 	}
 	padding: 80px 1em 1em 1em;
