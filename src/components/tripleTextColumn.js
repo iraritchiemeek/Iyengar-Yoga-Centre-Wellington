@@ -33,7 +33,6 @@ const TripleTextColumn = props => {
 					n++
 					return (
 						<FlexItem>
-							{n==1 ? <h2>{title}</h2> : ``}
 							{documentToReactComponents(column.json)}
 						</FlexItem>
 					)
@@ -44,10 +43,15 @@ const TripleTextColumn = props => {
 
 	const renderContent = (content, images) => {
 		return (
-			<FlexContainer>
-				{renderImages(images)}
-				{renderColumns(content)}
-			</FlexContainer>
+			<React.Fragment>
+				<InnerContainer>
+					<h2>{title}</h2>
+				</InnerContainer>
+				<FlexContainer>
+					{renderImages(images)}
+					{renderColumns(content)}
+				</FlexContainer>
+			</React.Fragment>
 		)
 	}
 
