@@ -18,7 +18,7 @@ class About extends React.Component {
       return (
         page.tripleTextColumns.map(tripleTextColumn => {
           return (
-            <TripleTextColumn content={tripleTextColumn.content} title={tripleTextColumn.title}></TripleTextColumn>
+            <TripleTextColumn content={[tripleTextColumn.column1, tripleTextColumn.column2, tripleTextColumn.column3]} title={tripleTextColumn.title}></TripleTextColumn>
           )
         })
       )
@@ -55,6 +55,15 @@ export const pageQuery = graphql`
       tripleTextColumns {
         title
         content {
+          json
+        }
+        column1 {
+          json
+        }
+        column2 {
+          json
+        }
+        column3 {
           json
         }
       }
