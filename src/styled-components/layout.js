@@ -18,17 +18,18 @@ export const NavList = styled.ul`
 `
 
 export const StyledHeader = styled.header`
-	padding: 0 2em .8em 2em;
+	@media ${device.laptop} {
+		background-color: initial;
+		padding: .8em 2em .8em 2em;
+	}
+	padding: .8em 2em 1em 2em;
 	box-sizing: border-box;
 	margin: 0 auto;
 	max-width: 100%;
 	position: fixed;
 	width: 100%;
 	background-color: white;
-	height: 70px;
-	@media ${device.laptop} {
-		background-color: rgba(0,0,0,0);
-	}
+	height: 80px;
 `
 
 export const NavItem = styled.li`
@@ -127,11 +128,10 @@ export const HamburgerInner = styled.div`
 `
 
 export const ContentContainer = styled.section`
-	@media ${device.laptopL} {
-		padding-top: .8em;
+	@media ${device.laptop} {
+		padding: .8em 1em 1em 1em;
 	}
-	padding: 1em;
-	padding-top: 70px;
+	padding: 80px 1em 1em 1em;
 	max-width: ${spacing.maxContentWidth};
     margin: auto;
     box-sizing: border-box;

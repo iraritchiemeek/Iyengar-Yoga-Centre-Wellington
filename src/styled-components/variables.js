@@ -8,7 +8,7 @@ export const color = {
 }
 
 export const spacing = {
-	maxContentWidth: "1100px",
+	maxContentWidth: "75em",
 	betweenItemSpace: 0.8
 }
 

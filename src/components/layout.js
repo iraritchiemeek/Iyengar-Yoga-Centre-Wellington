@@ -17,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     max-width: 100%;
     box-sizing: border-box;
-    padding-top: .8em;
   } 
   main {
     z-index: 0;
@@ -50,9 +49,12 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 58px;
+    height: 58px;
+    line-height: 40px;
     font-weight: 300;
     margin: 0;
     color: ${color.lightBlue};
+    text-align: center; 
   }
   h2 {
     font-size: 25px;
