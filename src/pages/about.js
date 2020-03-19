@@ -29,7 +29,7 @@ class About extends React.Component {
         <SEO title="Home" />
         <ContentContainer>
           <InnerContainer>
-            <h1>Class Levels</h1>
+            <h1>About</h1>
             <VerticalSpace space="30px"/>
             <Img fluid={page.image.fluid} />
           </InnerContainer>

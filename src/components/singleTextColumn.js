@@ -19,6 +19,7 @@ const SingleTextColumn = props => {
 	const { title, content, image } = props
 
 	if (!content || !title) return null
+
 	return (
 		<FlexItem>
 			{renderImage(image)}

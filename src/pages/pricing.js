@@ -7,6 +7,8 @@ import Img from "gatsby-image"
 import { ContentContainer, VerticalSpace, FlexContainer, InnerContainer } from "../styled-components/layout"
 import Quote from '../components/quote'
 import SingleTextColumn from '../components/singleTextColumn'
+import { BLOCKS } from '@contentful/rich-text-types';
+
 
 class PricingPage extends React.Component {
   render() {
@@ -14,6 +16,17 @@ class PricingPage extends React.Component {
     const prices = data.allContentfulPrice.edges
     const page = data.contentfulPage
     const singleTextColumns = page.singleTextColumns
+
+    const renderTextColumns = () => {
+      return (
+        singleTextColumns.map(content => {
+          console.log(content)
+          return (
+            <SingleTextColumn title={content.title} content={content.content.json}/>
+          )
+        })
+      )
+    }
 
     return (
       <Layout>
@@ -26,11 +39,7 @@ class PricingPage extends React.Component {
           <Quote author={page.quote.author} content={page.quote.content.content}/>
           <FlexContainer>
             <PricesList prices={prices}></PricesList>
-            {singleTextColumns.map(content => {
-              return (
-                <SingleTextColumn title={content.title} content={content.content.json}/>
-              )
-            })}
+            {renderTextColumns()}
           </FlexContainer>
         </ContentContainer>
       </Layout>

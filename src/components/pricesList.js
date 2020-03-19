@@ -23,7 +23,6 @@ const PricesList = props => {
 	}
 
 	const renderTerms = price => {
-		console.log(price)
 		if (!price.terms) {
 			return null 
 		} else {
