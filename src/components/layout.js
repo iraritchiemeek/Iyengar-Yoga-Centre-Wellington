@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   } 
   main {
+    padding-top: 60px;
     z-index: 0;
   }
   header {

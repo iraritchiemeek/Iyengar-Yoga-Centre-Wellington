@@ -1,6 +1,22 @@
 import styled from 'styled-components'
 import { color, device, spacing }  from './variables.js';
 
+export const Banner = styled.div`
+	width: 100%;
+	background-color: ${color.lightBlue};
+	height: 40px;
+	position: fixed;
+	margin-top: 80px;
+	z-index: 1;
+	p {
+		text-align: center;
+		font-weight: bold;
+		color: white;
+		margin: 0;
+		line-height: 40px;
+	}
+`
+
 export const NavList = styled.ul`
 	list-style: none;
 	margin: 0;
@@ -18,10 +34,10 @@ export const NavList = styled.ul`
 `
 
 export const StyledHeader = styled.header`
-	@media ${device.laptopL} {
-		background-color: initial;
-		padding: .8em 2em .8em 2em;
-	}
+	// @media ${device.laptopL} {
+	// 	background-color: initial;
+	// 	padding: .8em 2em .8em 2em;
+	// }
 	padding: .8em 2em 1em 2em;
 	box-sizing: border-box;
 	margin: 0 auto;
@@ -128,9 +144,9 @@ export const HamburgerInner = styled.div`
 `
 
 export const ContentContainer = styled.section`
-	@media ${device.laptopL} {
-		padding: .8em 1em 1em 1em;
-	}
+	// @media ${device.laptopL} {
+	// 	padding: .8em 1em 1em 1em;
+	// }
 	padding: 80px 1em 1em 1em;
 	max-width: ${spacing.maxContentWidth};
     margin: auto;
