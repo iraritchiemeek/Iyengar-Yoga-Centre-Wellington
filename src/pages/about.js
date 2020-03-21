@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
+import FullWidthImg from "../components/fullWidthImg"
 import { ContentContainer, VerticalSpace, InnerContainer, FlexContainer } from "../styled-components/layout"
 import Quote from '../components/quote'
 import TripleTextColumn from "../components/tripleTextColumn"
@@ -31,7 +31,7 @@ class About extends React.Component {
           <InnerContainer>
             <h1>About</h1>
             <VerticalSpace space="30px"/>
-            <Img fluid={page.image.fluid} />
+            <FullWidthImg fluid={page.image.fluid} />
           </InnerContainer>
           <Quote author={page.quote.author} content={page.quote.content.content}/>
           {renderTripleTextColumn()}

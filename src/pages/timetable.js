@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Timetable from "../components/timetable"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
+import FullWidthImg from "../components/fullWidthImg"
 import Quote from '../components/quote'
 import { FlexContainer, FlexItem, ContentContainer, InnerContainer, VerticalSpace } from "../styled-components/layout"
 
@@ -20,7 +20,7 @@ class TimetablePage extends React.Component {
           <InnerContainer>
             <h1>{data.contentfulPage.title}</h1>
             <VerticalSpace space="30px"/>
-            <Img fluid={pageImage.fluid} />
+            <FullWidthImg fluid={pageImage.fluid} />
           </InnerContainer>
           <Quote author={data.contentfulPage.quote.author} content={data.contentfulPage.quote.content.content}/>
           <Timetable classes={classes} /> 

@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
+import FullWidthImg from "../components/fullWidthImg"
 import { ContentContainer, FlexContainer, InnerContainer, VerticalSpace } from "../styled-components/layout"
 import Quote from "../components/quote"
 import SingleTextColumn from '../components/singleTextColumn'
@@ -25,7 +25,7 @@ class newStudentsPage extends React.Component {
           <InnerContainer>
             <h1>New Students</h1>
             <VerticalSpace space="30px"/>
-            <Img fluid={bannerImage.fluid} />
+            <FullWidthImg fluid={bannerImage.fluid} />
           </InnerContainer>
           <VerticalSpace space="15px"/>
           <FlexContainer>

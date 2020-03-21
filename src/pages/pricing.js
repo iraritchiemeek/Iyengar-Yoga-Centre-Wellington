@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import PricesList from "../components/pricesList"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
+import FullWidthImg from "../components/fullWidthImg"
 import { ContentContainer, VerticalSpace, FlexContainer, InnerContainer } from "../styled-components/layout"
 import Quote from '../components/quote'
 import SingleTextColumn from '../components/singleTextColumn'

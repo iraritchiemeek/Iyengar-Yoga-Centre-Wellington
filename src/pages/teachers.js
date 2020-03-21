@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import TeachersList from "../components/teachersList"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
 import { ContentContainer, VerticalSpace, InnerContainer } from "../styled-components/layout"
 import Quote from "../components/quote"
 
