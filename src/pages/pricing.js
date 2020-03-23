@@ -22,7 +22,7 @@ class PricingPage extends React.Component {
         singleTextColumns.map(content => {
           console.log(content)
           return (
-            <SingleTextColumn title={content.title} content={content.content.json}/>
+            <SingleTextColumn title={content.title} image={content.image} content={content.content.json}/>
           )
         })
       )
@@ -37,8 +37,8 @@ class PricingPage extends React.Component {
           </InnerContainer>
           <VerticalSpace space="15px"/>
           <Quote author={page.quote.author} content={page.quote.content.content}/>
+          <PricesList prices={prices}></PricesList>
           <FlexContainer>
-            <PricesList prices={prices}></PricesList>
             {renderTextColumns()}
           </FlexContainer>
         </ContentContainer>
@@ -55,6 +55,11 @@ export const pageQuery = graphql`
       title
       singleTextColumns {
         title
+        image {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
         content {
           json
         }
@@ -70,7 +75,6 @@ export const pageQuery = graphql`
       edges {
         node {
           title
-          terms
           validityPeriod
           price
           punchPassId

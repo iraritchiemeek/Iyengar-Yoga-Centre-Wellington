@@ -35,22 +35,22 @@ const PricesList = props => {
 	const renderPrice = price => {
 		price = price.node
 		return (
-			<React.Fragment>
+			<FlexItem>
 				<h2>{price.title} - ${price.price}</h2>
 				<NoSpaceP>{renderTerms(price)} {renderValidity(price)}</NoSpaceP>
 				<VerticalSpace space="5px" />
 				<Button><NoSpaceP><a href={punchPassUrl + price.punchPassId} target="_blank">Purchase</a></NoSpaceP></Button>
 				<VerticalSpace/>
-			</React.Fragment>
+			</FlexItem>
 		)
 	}
 
 	const renderPrices = prices => prices.map(renderPrice)
 
 	return (
-		<FlexItem>
+		<FlexContainer>
 			{renderPrices(prices)}
-		</FlexItem>
+		</FlexContainer>
 	)
 }
 
