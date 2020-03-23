@@ -3,11 +3,26 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { NavList, NavItem, Logo, StyledHeader, Hamburger, HamburgerBox, HamburgerInner, Banner, InnerContainer, ContentContainer} from "../styled-components/layout"
 import Img from "gatsby-image"
+import { Location } from '@reach/router'
 
 
-function Header({ siteTitle, logo }) {
+function Header({ siteTitle, logo, location }) {
 
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const path = typeof window !== 'undefined' ? window.location.pathname : '';
+
+  const renderCovidBanner = () => {
+    if (!path.includes("covid")) {
+      return (
+        <Link to="/covid19/"><Banner>
+            <InnerContainer>
+              <p>Click for COVID-19 notice.</p>
+            </InnerContainer>
+        </Banner></Link>
+      )
+    }
+  }
 
   return (
     <React.Fragment>
@@ -29,11 +44,8 @@ function Header({ siteTitle, logo }) {
           </HamburgerBox>
         </Hamburger>
       </StyledHeader>
-      <Link to="/covid19/"><Banner>
-          <InnerContainer>
-            <p>Click here for the latest from us on COVID-19.</p>
-          </InnerContainer>
-      </Banner></Link>
+
+      {renderCovidBanner()}
     </React.Fragment>
 
   )

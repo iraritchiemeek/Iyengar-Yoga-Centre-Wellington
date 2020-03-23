@@ -29,7 +29,7 @@ export const NavList = styled.ul`
 	top: 0;
 	left: 0;
 	display: ${props => props.open ? `block` : `none`};
-	padding-top: 70px;
+	padding-top: 115px;
 	z-index: 1;
 `
 
@@ -49,7 +49,7 @@ export const StyledHeader = styled.header`
 `
 
 export const NavItem = styled.li`
-	width: 100%;
+	max-width: 100%;
 	@media ${device.tablet} {
 		flex: 1;
 	}
