@@ -19,8 +19,6 @@ const TeachersList = props => {
 		)
 	}
 
-	
-
 	const renderTeachers = teachers => teachers.map(renderTeacher)
 
 	return (
