@@ -104,9 +104,6 @@ export const pageQuery = graphql`
       }
       tripleTextColumns {
         title
-        content {
-          json
-        }
         column1 {
           json
         }

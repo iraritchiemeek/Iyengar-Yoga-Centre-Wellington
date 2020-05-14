@@ -120,9 +120,6 @@ export const pageQuery = graphql`
       }
       tripleTextColumns {
         title
-        content {
-          json
-        }
       }
       quote {
         author
