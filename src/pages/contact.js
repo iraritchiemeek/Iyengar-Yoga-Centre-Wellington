@@ -15,7 +15,8 @@ class ContactPage extends React.Component {
         <ContentContainer>
           <InnerContainer>
             <h1>Contact</h1>
-            <a href="mailto: tessa@wellingtonyoga.co.nz"><h2>tessa@wellingtonyoga.co.nz</h2></a>
+            <VerticalSpace space="60px"/>
+            <a href="mailto: tessa@wellingtonyoga.co.nz"><h2 style={{textAlign: 'center'}}>tessa@wellingtonyoga.co.nz</h2></a>
           </InnerContainer>
         </ContentContainer>
       </Layout>
