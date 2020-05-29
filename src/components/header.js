@@ -13,7 +13,7 @@ function Header({ siteTitle, logo, location }) {
   const path = typeof window !== 'undefined' ? window.location.pathname : '';
 
   const renderCovidBanner = () => {
-    if (!path.includes("covid")) {
+    if (!path.includes("timetable")) {
       return (
         <Link to="/timetable/"><Banner>
             <InnerContainer>
