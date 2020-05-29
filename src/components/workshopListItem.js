@@ -33,7 +33,6 @@ const WorkshopListItem = props => {
           <Moment format="ddd D MMM" date={workshop.startDate} /> - <Moment format="ddd D MMM" date={workshop.endDate} />
         </p>
         {renderDescription()}
-        <Button><NoSpaceP>Read More</NoSpaceP></Button>
       </Link>
     </FlexItem>
   )

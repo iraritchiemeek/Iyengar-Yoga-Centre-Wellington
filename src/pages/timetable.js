@@ -20,9 +20,9 @@ class TimetablePage extends React.Component {
           <InnerContainer>
             <h1>{data.contentfulPage.title}</h1>
             <VerticalSpace space="30px"/>
-            <FullWidthImg fluid={pageImage.fluid} />
+           {/* <FullWidthImg fluid={pageImage.fluid} /> */}
           </InnerContainer>
-          <Quote author={data.contentfulPage.quote.author} content={data.contentfulPage.quote.content.content}/>
+          {/* <Quote author={data.contentfulPage.quote.author} content={data.contentfulPage.quote.content.content}/> */}
           <iframe name="frame2" src="https://wellingtonyoga.punchpass.com/calendar?embed=true" height="700" width="100%" frameborder="0"></iframe>
         </ContentContainer>
       </Layout>

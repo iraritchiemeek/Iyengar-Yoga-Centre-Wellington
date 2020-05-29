@@ -15,9 +15,9 @@ function Header({ siteTitle, logo, location }) {
   const renderCovidBanner = () => {
     if (!path.includes("covid")) {
       return (
-        <Link to="/covid19/"><Banner>
+        <Link to="/timetable/"><Banner>
             <InnerContainer>
-              <p>Click for COVID-19 notice.</p>
+              <p>View Timetable</p>
             </InnerContainer>
         </Banner></Link>
       )
