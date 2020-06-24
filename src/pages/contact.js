@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Timetable from "../components/timetable"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { FlexContainer, FlexItem, ContentContainer, InnerContainer } from "../styled-components/layout"
+import { FlexContainer, FlexItem, ContentContainer, InnerContainer, VerticalSpace } from "../styled-components/layout"
 
 class ContactPage extends React.Component {
   render() {
