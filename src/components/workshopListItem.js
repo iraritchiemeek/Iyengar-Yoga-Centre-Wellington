@@ -25,15 +25,13 @@ const WorkshopListItem = props => {
 
   return (
     <FlexItem>
-      <Link to={`/workshops/${slug(workshop.title)}`}>
-        <Img style={{ height: '230px' }} fluid={workshop.image.fluid} />
-        <VerticalSpace space="1em" />
-        <h2>{workshopTitle}</h2>
-        <p>
-          <Moment format="ddd D MMM" date={workshop.startDate} /> - <Moment format="ddd D MMM" date={workshop.endDate} />
-        </p>
-        {renderDescription()}
-      </Link>
+      <Img style={{ height: '230px' }} fluid={workshop.image.fluid} />
+      <VerticalSpace space="1em" />
+      <h2>{workshopTitle}</h2>
+      <p>
+        <Moment format="ddd D MMM" date={workshop.startDate} /> - <Moment format="ddd D MMM" date={workshop.endDate} />
+      </p>
+      {renderDescription()}
     </FlexItem>
   )
 }
