@@ -9,7 +9,7 @@ import TripleTextColumn from "../components/tripleTextColumn"
 import SingleTextColumn from "../components/singleTextColumn"
 import RetreatListItem from "../components/retreatListItem"
 import WorkshopListItem from "../components/workshopListItem"
-
+import Img from "gatsby-image"
 
 class Index extends React.Component {
   render() {
@@ -41,7 +41,7 @@ class Index extends React.Component {
         <SEO title="Home" />
         <ContentContainer>
           <InnerContainer>
-            <h1>Wellington Yoga</h1>
+            <Img objectFit="contain" style={{ maxHeight: '200px'}} fixed={data.textLogo.edges[0].node.fluid} />
             <VerticalSpace space="30px"/>
             <FullWidthImg fluid={bannerImage.fluid} />
           </InnerContainer>
@@ -59,6 +59,17 @@ export default Index
 
 export const pageQuery = graphql`
   query {
+    textLogo: allContentfulAsset(
+      filter: {contentful_id: {eq: "5inoe9cgxH2FjZQmUwtNIw"}}
+    ){
+      edges {
+        node {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+    }
     allContentfulNotice {
       edges {
         node {
@@ -96,17 +107,17 @@ export const pageQuery = graphql`
                 name
               }
             }
-            __typename ... on ContentfulSingleColumnText {
-              title
-              image {
-                fluid {
-                  ...GatsbyContentfulFluid
-                }
-              }
-              content {
-                json
-              }
-            }
+           # __typename ... on ContentfulSingleColumnText {
+           #   title
+           #   image {
+           #     fluid {
+           #       ...GatsbyContentfulFluid
+           #     }
+           #   }
+           #   content {
+           #     json
+           #   }
+           # }
           }
         }
       }
