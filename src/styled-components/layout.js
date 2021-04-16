@@ -17,67 +17,8 @@ export const Banner = styled.div`
 	}
 `
 
-export const NavList = styled.ul`
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	flex-wrap: wrap;
-	background-color: white;
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: ${props => props.open ? `block` : `none`};
-	padding-top: 115px;
-	z-index: 1;
-`
-
-export const StyledHeader = styled.header`
-	// @media ${device.laptopL} {
-	// 	background-color: initial;
-	// 	padding: .8em 2em .8em 2em;
-	// }
-	padding: .8em 2em 1em 2em;
-	box-sizing: border-box;
-	margin: 0 auto;
-	max-width: 100%;
-	position: fixed;
-	width: 100%;
-	background-color: white;
-	height: 80px;
-`
-
-export const NavItem = styled.li`
-	max-width: 100%;
-	@media ${device.tablet} {
-		flex: 1;
-	}
-	padding: .8em;
-	text-align: center;
-	a, a:visited, a:active {
-		font-size: 30px;
-		font-weight: bold;
-		color: ${color.lightBlue};
-		
-	}
-	a:hover, a.active {
-		text-decoration: underline;
-	}
-`
-
 export const InnerContainer = styled.div`
 	padding: 0 ${spacing.betweenItemSpace}em;
-`
-
-export const Logo = styled.div`
-	cursor: pointer;
-	width: 40px;
-	height: 50px;
-	margin-right: ${spacing.betweenItemSpace}em;
-	float: left;
-	z-index: 2;
-	position: relative;
 `
 
 export const Hamburger = styled.div`

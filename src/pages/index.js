@@ -41,7 +41,6 @@ class Index extends React.Component {
         <SEO title="Home" />
         <ContentContainer>
           <InnerContainer>
-            <Img objectFit="contain" imgStyle={{ objectFit: 'contain'}} style={{maxHeight: '200px'}} fluid={data.textLogo.edges[0].node.fluid} />
             <VerticalSpace space="30px"/>
             <FullWidthImg fluid={bannerImage.fluid} />
           </InnerContainer>

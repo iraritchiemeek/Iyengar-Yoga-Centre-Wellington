@@ -19,8 +19,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   } 
   main {
-    padding-top: 60px;
-    z-index: 0;
+    max-width: 100rem;
+    padding: 0 5rem;
   }
   header {
     z-index: 1;
@@ -98,7 +98,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} logo={data.logo.edges[0].node.fluid} />
       <GlobalStyle />
       <main>{children}</main>
-      <VerticalSpace />
     </React.Fragment>
   )
 }
